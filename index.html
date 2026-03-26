@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dorian Bellet — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <canvas id="stars"></canvas>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">db<span class="blink">_</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">profil</a></li>
+      <li><a href="#career">parcours</a></li>
+      <li><a href="#skills">stack</a></li>
+      <li><a href="#projects">projets</a></li>
+      <li><a href="#goals">ambitions</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+    <a href="CV_Dorian_Bellet.pdf" class="nav-cv" download>↓ CV</a>
+    <button class="burger" id="burger"><span></span><span></span></button>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="hero">
+    <div class="hero-wrap">
+      <div class="hero-left">
+        <div class="hero-eyebrow">
+          <span class="dot-green"></span>
+          <span>Disponible · 20 avr → 10 juil 2026</span>
+        </div>
+        <h1>Dorian<br/><span class="h1-accent">Bellet</span></h1>
+        <p class="hero-role">Étudiant BUT Informatique — 2<sup>e</sup> année<br/>IUT d'Orsay · Université Paris-Saclay</p>
+        <p class="hero-pitch">
+          Passionné de développement depuis 3 ans. Je cherche un <strong>stage de 11 à 12 semaines</strong> pour contribuer à de vrais projets et continuer à progresser.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Me contacter</a>
+          <a href="CV_Dorian_Bellet.pdf" class="btn-outline" download>↓ Télécharger le CV</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="photo-ring">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <img src="IMG_7032 (1).jpg" alt="Dorian Bellet" class="hero-photo" />
+        </div>
+        <div class="hero-stat-card">
+          <div class="hsc-row">
+            <span class="hsc-label">Formation</span>
+            <span class="hsc-val">BUT Informatique</span>
+          </div>
+          <div class="hsc-row">
+            <span class="hsc-label">Année</span>
+            <span class="hsc-val">2e / 3</span>
+          </div>
+          <div class="hsc-row">
+            <span class="hsc-label">Stage</span>
+            <span class="hsc-val">11–12 semaines</span>
+          </div>
+          <div class="hsc-row">
+            <span class="hsc-label">Statut</span>
+            <span class="hsc-val hsc-ok">● Disponible</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="hero-scroll">↓</a>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section class="section" id="about">
+    <div class="sec-label">01 — profil</div>
+    <div class="about-layout">
+      <div class="about-text">
+        <h2>Présentation</h2>
+        <p class="body-lg">
+          Je suis en <strong>2e année de BUT Informatique</strong> à l'IUT d'Orsay (Université Paris-Saclay). Passionné de développement depuis 3 ans, j'ai commencé en autodidacte avec Python avant d'intégrer le BUT.
+        </p>
+        <p>
+          Je recherche un <strong>stage rémunéré de 11 à 12 semaines</strong>, du <strong>20 avril au 10 juillet 2026</strong>, pour mettre en pratique mes compétences sur des projets concrets.
+        </p>
+      </div>
+      <div class="about-contacts">
+        <h3 class="contacts-title">Coordonnées</h3>
+        <div class="contact-list">
+          <div class="citem">
+            <span class="ckey">Adresse</span>
+            <span class="cval">21 rue André Maginot, Orsay</span>
+          </div>
+          <a href="mailto:dorian.belletmac@gmail.com" class="citem clink">
+            <span class="ckey">Email</span>
+            <span class="cval">dorian.belletmac@gmail.com ↗</span>
+          </a>
+          <div class="citem">
+            <span class="ckey">Téléphone</span>
+            <span class="cval">07 80 28 60 02</span>
+          </div>
+          <a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" class="citem clink">
+            <span class="ckey">LinkedIn</span>
+            <span class="cval">dorian-bellet-mac ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CAREER ══ -->
+  <section class="section s-tint" id="career">
+    <div class="sec-label">02 — parcours</div>
+    <h2>Formation &amp; Expériences</h2>
+    <div class="career-cols">
+
+      <div class="career-col">
+        <div class="col-title">Formation</div>
+        <div class="tl">
+          <div class="tl-item">
+            <div class="tl-period">2024 — en cours</div>
+            <div class="tl-name">BUT Informatique</div>
+            <div class="tl-place">IUT d'Orsay · Université Paris-Saclay</div>
+            <p class="tl-desc">Développement web & logiciel, algorithmique, bases de données, réseaux, systèmes, gestion de projet agile.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period">2024</div>
+            <div class="tl-name">Baccalauréat Général</div>
+            <div class="tl-place">Lycée Peter Pan · Antananarivo, Madagascar</div>
+            <p class="tl-desc">Spécialités : Mathématiques & NSI (Numérique et Sciences Informatiques). Mention Bien.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="career-col">
+        <div class="col-title">Expériences</div>
+        <div class="tl">
+          <div class="tl-item tl-open">
+            <div class="tl-period">20 avr. → 10 juil. 2026</div>
+            <div class="tl-name">Stage recherché 🔍</div>
+            <div class="tl-place">Développement · Île-de-France / France</div>
+            <p class="tl-desc">Disponible pour un stage en développement web, logiciel ou systèmes.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period">Été 2025 &nbsp;<span class="bonus-chip">bonus</span></div>
+            <div class="tl-name">Stage agricole</div>
+            <div class="tl-place">Granada, Espagne</div>
+            <p class="tl-desc">Entretien des cultures, construction (maçonnerie, transport de matériaux). Management participatif et prise de décision.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ══ -->
+  <section class="section" id="skills">
+    <div class="sec-label">03 — stack & compétences</div>
+    <h2>Ce que je maîtrise</h2>
+    <div class="skills-layout">
+
+      <div class="skill-block">
+        <div class="sb-title">Langages</div>
+        <div class="skill-chips">
+          <span class="chip chip-lang">🐍 Python</span>
+          <span class="chip chip-lang">☕ Java</span>
+          <span class="chip chip-lang">⚙ C++</span>
+          <span class="chip chip-lang">🌐 HTML / CSS</span>
+          <span class="chip chip-lang">🗄 SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="sb-title">Outils & Environnements</div>
+        <div class="skill-chips">
+          <span class="chip">Linux</span>
+          <span class="chip">Git</span>
+          <span class="chip">GitHub</span>
+          <span class="chip">GitLab</span>
+          <span class="chip">VS Code</span>
+          <span class="chip">IntelliJ</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">Docker</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="sb-title">Langues</div>
+        <div class="lang-rows">
+          <div class="lang-row">
+            <span class="lang-flag">🇫🇷</span>
+            <div>
+              <div class="lang-name">Français</div>
+              <div class="lang-lvl">C2 — Langue maternelle</div>
+            </div>
+          </div>
+          <div class="lang-row">
+            <span class="lang-flag">🇬🇧</span>
+            <div>
+              <div class="lang-name">Anglais</div>
+              <div class="lang-lvl">B1 — Intermédiaire</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="sb-title">Soft skills</div>
+        <div class="skill-chips">
+          <span class="chip chip-soft">Motivé</span>
+          <span class="chip chip-soft">Organisé</span>
+          <span class="chip chip-soft">Adaptabilité</span>
+          <span class="chip chip-soft">Travail collaboratif</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ══ -->
+  <section class="section s-tint" id="projects">
+    <div class="sec-label">04 — projets · méthode STAR</div>
+    <h2>Réalisations</h2>
+    <div class="proj-stack">
+
+      <!-- Projet 1 -->
+      <div class="proj-card">
+        <div class="pc-head">
+          <div>
+            <div class="pc-date">Décembre 2025</div>
+            <h3 class="pc-title">Application de gestion de groupes TD/TP</h3>
+          </div>
+          <a href="#" class="pc-link">GitHub ↗</a>
+        </div>
+        <div class="star-rows">
+          <div class="star-row"><span class="star-s">Situation</span><p>Projet de BUT en trinôme : concevoir une application de gestion d'une promotion d'élèves et de leurs groupes de TD/TP.</p></div>
+          <div class="star-row"><span class="star-s">Tâche</span><p>Développer l'application complète — modèle de données, back-end Java, interface web — dans les délais impartis.</p></div>
+          <div class="star-row"><span class="star-s">Action</span><p>Java & SQL pour la logique métier, HTML/CSS pour l'interface. Collaboration et versioning via GitLab.</p></div>
+          <div class="star-row"><span class="star-s">Résultat</span><p>Application fonctionnelle livrée en trinôme. Maîtrise du travail collaboratif et de l'intégration multi-langages.</p></div>
+        </div>
+        <div class="pc-tags"><span class="tag">Java</span><span class="tag">SQL</span><span class="tag">HTML/CSS</span><span class="tag">GitLab</span></div>
+      </div>
+
+      <!-- Projet 2 -->
+      <div class="proj-card">
+        <div class="pc-head">
+          <div>
+            <div class="pc-date">Décembre 2024</div>
+            <h3 class="pc-title">Site web — activité de divertissement</h3>
+          </div>
+          <a href="#" class="pc-link">GitHub ↗</a>
+        </div>
+        <div class="star-rows">
+          <div class="star-row"><span class="star-s">Situation</span><p>Projet BUT en binôme : créer un site web sur une activité de divertissement (choix libre), 3 pages au total.</p></div>
+          <div class="star-row"><span class="star-s">Tâche</span><p>Concevoir la structure, le design et l'intégration du contenu en respectant les bonnes pratiques web.</p></div>
+          <div class="star-row"><span class="star-s">Action</span><p>Développé en HTML et CSS, répartition des tâches en binôme avec versioning Git.</p></div>
+          <div class="star-row"><span class="star-s">Résultat</span><p>Site fonctionnel livré dans les délais, respectant le cahier des charges.</p></div>
+        </div>
+        <div class="pc-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Git</span></div>
+      </div>
+
+      <!-- Projet 3 -->
+      <div class="proj-card">
+        <div class="pc-head">
+          <div>
+            <div class="pc-date">Octobre 2024</div>
+            <h3 class="pc-title">Jeu vidéo en C++</h3>
+          </div>
+          <a href="#" class="pc-link">GitHub ↗</a>
+        </div>
+        <div class="star-rows">
+          <div class="star-row"><span class="star-s">Situation</span><p>Projet BUT : développer un jeu vidéo en C++ avec contraintes de déplacement dans une zone définie.</p></div>
+          <div class="star-row"><span class="star-s">Tâche</span><p>Implémenter la boucle de jeu, les déplacements du personnage et la gestion des collisions avec les limites.</p></div>
+          <div class="star-row"><span class="star-s">Action</span><p>Codé en C++ — boucle de jeu, détection de collision et logique de contrainte de zone.</p></div>
+          <div class="star-row"><span class="star-s">Résultat</span><p>Personnage confiné à la zone définie, jeu jouable et fonctionnel.</p></div>
+        </div>
+        <div class="pc-tags"><span class="tag">C++</span><span class="tag">Game dev</span></div>
+      </div>
+
+      <!-- Projet 4 -->
+      <div class="proj-card">
+        <div class="pc-head">
+          <div>
+            <div class="pc-date">Juillet 2023</div>
+            <h3 class="pc-title">Jeu à roulette en Python</h3>
+          </div>
+          <a href="#" class="pc-link">GitHub ↗</a>
+        </div>
+        <div class="star-rows">
+          <div class="star-row"><span class="star-s">Situation</span><p>Exercice tiré d'un livre d'apprentissage Python : implémenter une version simplifiée d'un jeu de roulette.</p></div>
+          <div class="star-row"><span class="star-s">Tâche</span><p>Comprendre les bases : variables, boucles, conditions, génération de nombres aléatoires.</p></div>
+          <div class="star-row"><span class="star-s">Action</span><p>Jeu en console codé en Python — logique de mise, tirage aléatoire, affichage du résultat.</p></div>
+          <div class="star-row"><span class="star-s">Résultat</span><p>Premier projet fonctionnel — point de départ de ma passion pour le développement.</p></div>
+        </div>
+        <div class="pc-tags"><span class="tag">Python</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ GOALS & INTERESTS ══ -->
+  <section class="section" id="goals">
+    <div class="sec-label">05 — ambitions & centres d'intérêt</div>
+    <h2>Vision &amp; Passions</h2>
+    <div class="gi-layout">
+
+      <div class="gi-card">
+        <div class="gi-card-title">Projet professionnel</div>
+        <div class="goal-item">
+          <div class="goal-horizon">Court terme <span class="goal-period">(0–1 an)</span></div>
+          <p>Valider mon stage et terminer ma 2e année de BUT avec de bons résultats.</p>
+        </div>
+        <div class="goal-item">
+          <div class="goal-horizon">Moyen terme <span class="goal-period">(1–3 ans)</span></div>
+          <p>Terminer le BUT et poursuivre en Master ou école d'ingénieur, spécialisé en développement logiciel.</p>
+        </div>
+        <div class="goal-item">
+          <div class="goal-horizon">Long terme <span class="goal-period">(3 ans +)</span></div>
+          <p>Exercer en tant que développeur ou ingénieur logiciel sur des projets techniques ambitieux.</p>
+        </div>
+      </div>
+
+      <div class="gi-card">
+        <div class="gi-card-title">Centres d'intérêt</div>
+        <div class="interest-list">
+          <div class="interest-item">
+            <div class="ii-icon">🔲</div>
+            <div>
+              <div class="ii-name">Rubik's cube</div>
+              <p>Speedcuber depuis 7 ans. Lauréat de <strong>2 compétitions</strong> — Lille (juin 2025) et Madrid (juillet 2025).</p>
+            </div>
+          </div>
+          <div class="interest-item">
+            <div class="ii-icon">🐍</div>
+            <div>
+              <div class="ii-name">Développement</div>
+              <p>Autodidacte sur Python depuis 3 ans. J'aime créer des petits projets perso et expérimenter de nouveaux outils.</p>
+            </div>
+          </div>
+          <div class="interest-item">
+            <div class="ii-icon">🎹</div>
+            <div>
+              <div class="ii-name">Piano</div>
+              <p>Pratique du piano — La Lettre à Élise, La Marche Turque. Discipline et créativité.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Galerie -->
+    <div class="gallery-section">
+      <div class="gallery-label">Photos & Vidéos</div>
+      <div class="gallery-grid">
+        <div class="gal-item">
+          <img src="Z52_8504.jpg" alt="Compétition Rubik's cube" onerror="this.parentElement.classList.add('gal-empty')" />
+          <div class="gal-overlay">Compétition</div>
+        </div>
+        <div class="gal-item gal-wide">
+          <video src="Solve.mp4" autoplay muted loop playsinline></video>
+          <div class="gal-overlay">Finale Rubik's cube — Île-de-France</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section class="section s-tint" id="contact">
+    <div class="sec-label">06 — contact</div>
+    <div class="contact-layout">
+      <div class="contact-left">
+        <h2>Entrons en contact</h2>
+        <p class="body-lg">Disponible pour un stage de <strong>11 à 12 semaines</strong> à partir du <strong>20 avril 2026</strong>.</p>
+        <div class="contact-cards">
+          <a href="mailto:dorian.belletmac@gmail.com" class="cc">
+            <span class="cc-label">Email</span>
+            <span class="cc-val">dorian.belletmac@gmail.com</span>
+          </a>
+          <div class="cc">
+            <span class="cc-label">Téléphone</span>
+            <span class="cc-val">07 80 28 60 02</span>
+          </div>
+          <a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" class="cc">
+            <span class="cc-label">LinkedIn</span>
+            <span class="cc-val">dorian-bellet-mac ↗</span>
+          </a>
+        </div>
+      </div>
+      <div class="terminal">
+        <div class="term-bar">
+          <div class="tdots"><span class="td r"></span><span class="td y"></span><span class="td g"></span></div>
+          <span class="term-title">contact.sh</span>
+        </div>
+        <div class="term-body">
+          <p><span class="tp">~/portfolio $</span> <span class="tc">cat stage.txt</span></p>
+          <p class="to">Candidat  : Dorian Bellet</p>
+          <p class="to">Formation : BUT Informatique — IUT Orsay</p>
+          <p class="to">Durée     : 11–12 semaines</p>
+          <p class="to">Période   : 20 avril → 10 juillet 2026</p>
+          <p class="to t-ok">Statut    : ✓ disponible</p>
+          <p><span class="tp">~/portfolio $</span> <span class="blink tp">_</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span class="f-name">Dorian Bellet</span>
+    <span class="f-mid">BUT Informatique · IUT Orsay · 2026</span>
+    <div class="f-links">
+      <a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank">LinkedIn</a>
+      <a href="CV_Dorian_Bellet.pdf" download>CV</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
