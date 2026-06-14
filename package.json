@@ -1,0 +1,23 @@
+{
+  "name": "dorian-bellet-portfolio",
+  "version": "2.0.0",
+  "description": "Portfolio de Dorian Bellet — étudiant développeur & speedcuber.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "optimize:media": "node scripts/optimize-media.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.18",
+    "three": "0.128.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.1",
+    "vite": "^5.4.10",
+    "vitest": "^2.1.4"
+  }
+}

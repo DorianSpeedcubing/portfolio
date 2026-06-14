@@ -1,0 +1,71 @@
+/* ============================================================
+   Design tokens — "Editorial light + dark cube bands"
+   ============================================================ */
+:root {
+  /* — Canvas / ink — */
+  --canvas:      #f4f1ea;   /* bone editorial background */
+  --canvas-2:    #ece8df;   /* slightly deeper panels */
+  --ink:         #0b0b0b;   /* primary text */
+  --ink-soft:    #3a3a38;   /* secondary text */
+  --ink-mute:    #6b6a64;   /* tertiary / meta */
+  --hair:        rgba(11, 11, 11, 0.14);   /* hairline rules */
+  --hair-soft:   rgba(11, 11, 11, 0.07);
+
+  /* — Dark immersive bands — */
+  --dark:        #070707;
+  --dark-2:      #111110;
+  --on-dark:     #f4f1ea;
+  --on-dark-soft:#a7a39a;
+  --hair-dark:   rgba(244, 241, 234, 0.16);
+
+  /* — Signature (competition red, doubles as the R face) — */
+  --signature:   #e01818;
+  --signature-ink:#ff3a22;  /* brighter, for use on dark */
+
+  /* — Cube spectrum (categorical accents only) — */
+  --c-r: #e01818;
+  --c-o: #ff6a00;
+  --c-w: #f4f4f2;
+  --c-y: #ffd200;
+  --c-g: #12b24a;
+  --c-b: #1466dc;
+
+  /* — Type families — */
+  --font-serif:   'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-grotesk: 'Space Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* — Fluid type scale (clamp: min, vw, max) — */
+  --fs-mega:  clamp(3.4rem, 1.2rem + 9vw, 11rem);     /* hero display */
+  --fs-h1:    clamp(2.2rem, 1.1rem + 4.6vw, 5.2rem);  /* section statements */
+  --fs-h2:    clamp(1.6rem, 1rem + 2.4vw, 2.9rem);
+  --fs-h3:    clamp(1.18rem, 0.95rem + 1vw, 1.6rem);
+  --fs-lede:  clamp(1.05rem, 0.95rem + 0.7vw, 1.45rem);
+  --fs-body:  clamp(0.98rem, 0.94rem + 0.2vw, 1.08rem);
+  --fs-sm:    0.86rem;
+  --fs-xs:    0.74rem;     /* labels / section numbers */
+
+  /* — Spacing scale — */
+  --sp-1: 0.5rem;
+  --sp-2: 1rem;
+  --sp-3: 1.5rem;
+  --sp-4: 2.5rem;
+  --sp-5: 4rem;
+  --sp-6: 6rem;
+  --sp-7: 9rem;
+  --section-y: clamp(5rem, 3rem + 8vw, 11rem);
+
+  /* — Layout — */
+  --maxw: 1400px;
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3.5rem);
+  --col-gap: clamp(1.5rem, 1rem + 2vw, 3rem);
+
+  /* — Motion — */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.22s;
+  --dur: 0.45s;
+
+  --radius: 14px;
+  --radius-sm: 8px;
+}
