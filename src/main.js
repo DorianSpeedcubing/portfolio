@@ -5,6 +5,7 @@ import './styles/sections.css';
 import { initCube } from './lib/cube.js';
 import { initScroll, reveal, parallax, initNav } from './lib/scroll.js';
 import { initProjects } from './lib/projects.js';
+import { initSpeedcube } from './lib/speedcube.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Dev-only "still" mode (?still): disables Lenis + scroll reveals so any
@@ -31,6 +32,7 @@ function boot() {
   if (!STILL) { reveal(); parallax(); }
   initNav(lenis);
   initProjects();
+  initSpeedcube();
 
   if (STILL && location.hash) {
     const t = document.querySelector(location.hash);
