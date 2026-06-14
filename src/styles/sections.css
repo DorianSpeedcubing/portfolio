@@ -470,7 +470,6 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
 
 /* ---------- 06 Contact ---------- */
 .contact { position: relative; overflow: hidden; }
-.contact__aura { position: absolute; z-index: 0; width: 55vw; height: 55vw; left: -10%; bottom: -20%; background: radial-gradient(circle, var(--glow-b), transparent 62%); filter: blur(50px); opacity: 0.45; pointer-events: none; }
 .contact__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
 .contact__title { font-size: var(--fs-mega); }
 .contact__avail { margin: 1.5rem 0; font-size: var(--fs-lede); color: var(--text-soft); max-width: 40ch; }

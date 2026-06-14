@@ -76,6 +76,19 @@
     </defs>
   </svg>
 
+  <!-- ===== Intro loader: speedcube solve → opening reveal (≈3s, once per session) ===== -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader__panel loader__panel--top"></div>
+    <div class="loader__panel loader__panel--bot"></div>
+    <div class="loader__stage">
+      <div class="loader__scene"><div class="cube3d" data-loader-cube></div></div>
+      <div class="loader__readout">
+        <span class="loader__timer mono" data-loader-timer>0.00</span>
+        <span class="loader__cap mono" data-loader-cap>résolution</span>
+      </div>
+    </div>
+  </div>
+
   <div class="grain" aria-hidden="true"></div>
   <div class="vignette" aria-hidden="true"></div>
   <div class="progress" data-progress aria-hidden="true"></div>
@@ -603,7 +616,6 @@
 
     <!-- ============================== 06 CONTACT ============================== -->
     <section class="section contact" id="contact">
-      <div class="contact__aura" aria-hidden="true"></div>
       <div class="container contact__grid">
         <div class="contact__intro">
           <header class="section-head" data-reveal>

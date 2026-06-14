@@ -10,6 +10,7 @@ import { initTimer } from './lib/timer.js';
 import { initLightbox } from './lib/lightbox.js';
 import { initMagnetic } from './lib/magnetic.js';
 import { initVelocity } from './lib/velocity.js';
+import { initLoader } from './lib/loader.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // `?still` = screenshot/QA mode: render every section in its final, visible
@@ -36,6 +37,7 @@ function boot() {
 
   // Smooth scroll + scroll-driven motion + nav
   const lenis = initScroll();
+  initLoader(lenis);
   if (!STILL) {
     heroIntro();
     reveal();
