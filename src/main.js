@@ -6,6 +6,10 @@ import { initCube } from './lib/cube.js';
 import { initScroll, reveal, parallax, initNav } from './lib/scroll.js';
 import { initProjects } from './lib/projects.js';
 import { initSpeedcube } from './lib/speedcube.js';
+import { initScramble } from './lib/scramble.js';
+import { initTimer } from './lib/timer.js';
+import { initLightbox } from './lib/lightbox.js';
+import { initMagnetic } from './lib/magnetic.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Dev-only "still" mode (?still): disables Lenis + scroll reveals so any
@@ -33,6 +37,9 @@ function boot() {
   initNav(lenis);
   initProjects();
   initSpeedcube();
+  initTimer();
+  initLightbox();
+  if (!STILL) { initScramble(); initMagnetic(); }
 
   if (STILL && location.hash) {
     const t = document.querySelector(location.hash);

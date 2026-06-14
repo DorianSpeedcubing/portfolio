@@ -9,7 +9,7 @@
   letter-spacing: 0.01em; padding: 0.95em 1.5em; border-radius: 100px;
   border: 1px solid transparent; white-space: nowrap;
   transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out), transform var(--dur) var(--ease-out);
+    border-color var(--dur-fast) var(--ease-out);
   will-change: transform;
 }
 .btn--solid { background: var(--signature); color: #fff; }
@@ -441,3 +441,36 @@ html.js .project.is-open .project__panel { grid-template-rows: 1fr; }
   .sc-media { grid-template-columns: 1fr; }
   .sc-stats { gap: 1.4rem; }
 }
+
+/* ============================== LIGHTBOX ============================== */
+.lightbox {
+  position: fixed; inset: 0; z-index: 300;
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(0.5rem, 2vw, 1.5rem); padding: clamp(1rem, 4vw, 3rem);
+  background: color-mix(in srgb, var(--dark) 92%, transparent);
+  backdrop-filter: blur(8px);
+  opacity: 0; visibility: hidden; transition: opacity var(--dur) var(--ease-out), visibility var(--dur);
+}
+.lightbox.is-open { opacity: 1; visibility: visible; }
+.lightbox__fig { margin: 0; max-width: min(1100px, 92vw); max-height: 86vh; }
+.lightbox__img {
+  max-width: 100%; max-height: 86vh; object-fit: contain; border-radius: var(--radius-sm);
+  box-shadow: 0 40px 100px -30px rgba(0,0,0,0.7);
+  transform: scale(0.96); transition: transform var(--dur) var(--ease-out);
+}
+.lightbox.is-open .lightbox__img { transform: scale(1); }
+.lightbox__btn {
+  flex: none; color: var(--on-dark); font-size: 1.6rem; line-height: 1;
+  width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--hair-dark);
+  display: grid; place-items: center; transition: background var(--dur-fast), border-color var(--dur-fast);
+}
+.lightbox__btn:hover { background: rgba(255,255,255,0.08); border-color: var(--on-dark-soft); }
+.lightbox__close { position: absolute; top: clamp(1rem, 3vw, 2rem); right: clamp(1rem, 3vw, 2rem); }
+@media (max-width: 640px) {
+  .lightbox__prev, .lightbox__next { position: absolute; bottom: 1.2rem; z-index: 2; }
+  .lightbox__prev { left: 30%; } .lightbox__next { right: 30%; }
+}
+
+/* divider B image focus */
+.divider--b .divider__media img { object-position: center 30%; }
+.divider__media img[data-lightbox] { cursor: zoom-in; }
