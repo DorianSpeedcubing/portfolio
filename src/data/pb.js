@@ -1,30 +1,68 @@
 // ============================================================
-//  Speedcube data
-//  TODO(dorian): remplace les temps ci-dessous par tes vrais PB
-//  (single / Ao5) et la suite `trend` par tes dernières sessions.
-//  Les 2 victoires (PALMARES) et "7 ans" sont déjà réelles.
+//  Speedcube data — Dorian Bellet · WCA 2019GERA06 (real figures)
+//  Source: World Cube Association profile.
 // ============================================================
 
-/** Per-event personal bests. Times are placeholders — see TODO above. */
+/** WCA profile summary. */
+export const WCA = {
+  id: '2019GERA06',
+  url: 'https://www.worldcubeassociation.org/persons/2019GERA06',
+  region: 'France',
+  competitions: 24,
+  solves: 1010,
+};
+
+/** Olympic-style medal tally across competitions. */
+export const MEDALS = { gold: 4, silver: 6, bronze: 5 };
+
+/**
+ * Headline per-event cards. `single`/`ao5` are real PBs; `nr`/`wr` are the real
+ * national / world ranks for the single. `trend` is an illustrative improvement
+ * curve (no public session data) ending near the real Ao5.
+ */
 export const EVENTS = [
-  { event: '3×3',     color: '--c-r', single: '8.42',  ao5: '11.30', trend: [16.1, 15.2, 14.6, 14.0, 13.4, 13.1, 12.6, 12.2, 11.9, 11.6, 11.4, 11.3] },
-  { event: '2×2',     color: '--c-y', single: '2.61',  ao5: '3.94',  trend: [6.2, 5.8, 5.4, 5.1, 4.9, 4.6, 4.4, 4.2, 4.1, 4.0, 3.97, 3.94] },
-  { event: '3×3 OH',  color: '--c-b', single: '18.74', ao5: '23.55', trend: [33, 31, 29.5, 28, 27, 26, 25.2, 24.6, 24.1, 23.9, 23.7, 23.55] },
-  { event: 'Pyraminx', color: '--c-g', single: '4.08', ao5: '6.71',  trend: [10.4, 9.7, 9.0, 8.5, 8.0, 7.7, 7.4, 7.1, 6.95, 6.85, 6.78, 6.71] },
-  { event: 'Skewb',   color: '--c-o', single: '5.20',  ao5: '7.05',  trend: [11, 10.2, 9.6, 9.0, 8.5, 8.1, 7.8, 7.5, 7.3, 7.2, 7.1, 7.05] },
+  { event: '3×3',      color: '--c-r', single: '5.70',  ao5: '7.60',  nr: 23,  wr: 882,
+    trend: [13.4, 12.6, 11.8, 11.0, 10.3, 9.6, 9.0, 8.6, 8.2, 7.9, 7.7, 7.60] },
+  { event: '2×2',      color: '--c-y', single: '1.25',  ao5: '2.65',  nr: 49,  wr: 2166,
+    trend: [5.2, 4.8, 4.4, 4.0, 3.7, 3.4, 3.2, 3.0, 2.9, 2.8, 2.72, 2.65] },
+  { event: '3×3 OH',   color: '--c-b', single: '11.57', ao5: '14.54', nr: 41,  wr: 1746,
+    trend: [24, 22.5, 21, 19.8, 18.6, 17.6, 16.8, 16.1, 15.5, 15.0, 14.7, 14.54] },
+  { event: '4×4',      color: '--c-g', single: '30.86', ao5: '34.34', nr: 63,  wr: 2691,
+    trend: [52, 49, 46, 43.5, 41.5, 39.8, 38.4, 37.2, 36.2, 35.4, 34.8, 34.34] },
+  { event: 'Pyraminx', color: '--c-o', single: '5.17',  ao5: '7.83',  nr: 346, wr: 17921,
+    trend: [13.5, 12.6, 11.7, 11.0, 10.3, 9.7, 9.2, 8.8, 8.4, 8.1, 7.95, 7.83] },
+  { event: 'Skewb',    color: '--c-p', single: '4.61',  ao5: '5.73',  nr: 220, wr: 10891,
+    trend: [10.4, 9.6, 8.9, 8.3, 7.7, 7.2, 6.8, 6.4, 6.1, 5.9, 5.8, 5.73] },
 ];
 
-/** Headline stats (real). */
+/** Full personal-best table — every official event (single · average · ranks). */
+export const RECORDS = [
+  { event: '3×3',                single: '5.70',    average: '7.60',    nr: 23,  wr: 882 },
+  { event: '2×2',                single: '1.25',    average: '2.65',    nr: 49,  wr: 2166 },
+  { event: '4×4',                single: '30.86',   average: '34.34',   nr: 63,  wr: 2691 },
+  { event: '5×5',                single: '1:05.40', average: '1:16.70', nr: 73,  wr: 3372 },
+  { event: '6×6',                single: '2:43.60', average: '2:49.03', nr: 121, wr: 5511 },
+  { event: '3×3 à une main',     single: '11.57',   average: '14.54',   nr: 41,  wr: 1746 },
+  { event: '3×3 à l’aveugle',    single: '2:16.51', average: '2:53.76', nr: 159, wr: 4618 },
+  { event: '3×3 fewest moves',   single: '35',      average: '—',       nr: 137, wr: 3605 },
+  { event: 'Clock',              single: '9.20',    average: '10.96',   nr: 138, wr: 6563 },
+  { event: 'Pyraminx',           single: '5.17',    average: '7.83',    nr: 346, wr: 17921 },
+  { event: 'Skewb',              single: '4.61',    average: '5.73',    nr: 220, wr: 10891 },
+  { event: 'Square-1',           single: '12.14',   average: '21.38',   nr: 56,  wr: 2490 },
+];
+
+/** Headline counters (real). */
 export const STATS = [
   { value: '7', label: 'ans de cube' },
-  { value: '2', label: 'victoires' },
-  { value: '5', label: 'épreuves' },
+  { value: '24', label: 'compétitions' },
+  { value: '1010', label: 'résolutions' },
 ];
 
-/** Competition wins (real). */
+/** Notable competition podiums (real). */
 export const PALMARES = [
-  { title: 'Compétition de Lille', date: 'Juin 2025', place: 'Lille, France' },
-  { title: 'Compétition de Madrid', date: 'Juillet 2025', place: 'Madrid, Espagne' },
+  { title: 'Le Cube Normand Open 2026', meta: 'Finale · 1ʳᵉ place', note: '3×3 — record perso 5.70', rank: 'or' },
+  { title: 'Villanueva Open 2025',      meta: 'Finale · 1ʳᵉ place', note: '3×3', rank: 'or' },
+  { title: 'LexOpen France 2025',       meta: 'Finale · 2ᵉ place',  note: '3×3', rank: 'argent' },
 ];
 
 /**

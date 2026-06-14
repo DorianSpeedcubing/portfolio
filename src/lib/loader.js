@@ -53,6 +53,8 @@ export function initLoader(lenis) {
   // Speedcube timer counting up to a believable solve time.
   const timerEl = el.querySelector('[data-loader-timer]');
   const capEl = el.querySelector('[data-loader-cap]');
+  timerEl.textContent = '0.00';
+  if (capEl) capEl.textContent = 'résolution';
   const target = 6 + Math.random() * 3; // 6–9 s
   const countDur = 1500;
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
