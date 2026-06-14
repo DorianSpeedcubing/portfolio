@@ -101,7 +101,7 @@
       </nav>
 
       <div class="header__right">
-        <span class="status-pill"><span class="dot" aria-hidden="true"></span><span class="status-pill__txt">Disponible</span></span>
+        <span class="status-pill"><span class="status-pill__mark" aria-hidden="true"></span><span class="status-pill__txt">Disponible</span><span class="status-pill__sub">Avr. 2026</span></span>
         <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Ouvrir le menu">
           <span></span><span></span>
         </button>
@@ -113,11 +113,8 @@
 
     <!-- ============================== HERO ============================== -->
     <section class="hero" id="top">
-      <div class="hero__mesh" aria-hidden="true">
-        <span class="blob blob--r"></span>
-        <span class="blob blob--b"></span>
-        <span class="blob blob--g"></span>
-      </div>
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__light" aria-hidden="true"></div>
 
       <canvas id="cube" class="hero__cube" aria-hidden="true"></canvas>
 
@@ -154,10 +151,10 @@
         <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
       </a>
 
-      <div class="hero__marquee marquee" aria-hidden="true">
-        <div class="marquee__track">
-          <span class="marquee__item">Speedcuber<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Développeur<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>BUT Informatique<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Disponible · Avril 2026<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span>
-          <span class="marquee__item">Speedcuber<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Développeur<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>BUT Informatique<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Disponible · Avril 2026<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span>
+      <div class="hero__marquee vmarquee" data-velocity="0.45" aria-hidden="true">
+        <div class="vmarquee__track" data-velocity-track>
+          <span class="vmarquee__item">Speedcuber<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Développeur<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>BUT Informatique<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Stage · Avril 2026<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span>
+          <span class="vmarquee__item">Speedcuber<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Développeur<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>BUT Informatique<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Stage · Avril 2026<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span>
         </div>
       </div>
     </section>
@@ -350,6 +347,21 @@
           <p class="eyebrow">04 · projets · méthode STAR</p>
           <h2 class="section-title display" data-reveal-lines>Réalisations</h2>
         </header>
+
+        <div class="projets__kinetic" aria-hidden="true">
+          <div class="vmarquee vmarquee--xl" data-velocity="0.7">
+            <div class="vmarquee__track" data-velocity-track>
+              <span class="vmarquee__row">Java<i>·</i>SQL<i>·</i>C++<i>·</i>Python<i>·</i>HTML/CSS<i>·</i>Game&nbsp;dev<i>·</i>Web<i>·</i></span>
+              <span class="vmarquee__row">Java<i>·</i>SQL<i>·</i>C++<i>·</i>Python<i>·</i>HTML/CSS<i>·</i>Game&nbsp;dev<i>·</i>Web<i>·</i></span>
+            </div>
+          </div>
+          <div class="vmarquee vmarquee--xl vmarquee--outline" data-velocity="0.7" data-velocity-dir="rev">
+            <div class="vmarquee__track" data-velocity-track>
+              <span class="vmarquee__row">Concevoir<i>·</i>Construire<i>·</i>Livrer<i>·</i>Itérer<i>·</i></span>
+              <span class="vmarquee__row">Concevoir<i>·</i>Construire<i>·</i>Livrer<i>·</i>Itérer<i>·</i></span>
+            </div>
+          </div>
+        </div>
 
         <ul class="projects">
           <li class="project is-open" data-reveal>

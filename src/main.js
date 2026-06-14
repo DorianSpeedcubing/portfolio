@@ -9,7 +9,7 @@ import { initScramble } from './lib/scramble.js';
 import { initTimer } from './lib/timer.js';
 import { initLightbox } from './lib/lightbox.js';
 import { initMagnetic } from './lib/magnetic.js';
-import { initCursor } from './lib/cursor.js';
+import { initVelocity } from './lib/velocity.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // `?still` = screenshot/QA mode: render every section in its final, visible
@@ -44,9 +44,9 @@ function boot() {
     counters();
     parallax();
     initScramble();
-    initCursor();
   }
   initNav(lenis);
+  initVelocity();
 
   // Interactions
   initProjects();

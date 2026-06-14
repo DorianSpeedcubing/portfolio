@@ -72,14 +72,27 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
 
 /* ---------- HERO ---------- */
 .hero { position: relative; min-height: 100svh; overflow: hidden; display: flex; }
-.hero__mesh { position: absolute; inset: -10% -10% 0; z-index: 0; filter: blur(70px); opacity: 0.62; }
-.blob { position: absolute; border-radius: 50%; will-change: transform; }
-.blob--r { width: 46vw; height: 46vw; left: 30%; top: 4%;  background: radial-gradient(circle, var(--c-r), transparent 66%); animation: drift1 18s var(--ease-inout) infinite; }
-.blob--b { width: 40vw; height: 40vw; left: 54%; top: 26%; background: radial-gradient(circle, var(--c-b), transparent 66%); animation: drift2 22s var(--ease-inout) infinite; }
-.blob--g { width: 32vw; height: 32vw; left: 8%;  top: 40%; background: radial-gradient(circle, var(--c-g), transparent 66%); animation: drift3 26s var(--ease-inout) infinite; opacity: 0.7; }
-@keyframes drift1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-8%, 6%) scale(1.12);} }
-@keyframes drift2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(7%, -5%) scale(0.9);} }
-@keyframes drift3 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(10%, 8%) scale(1.15);} }
+
+/* Engineered atmosphere: a faint precision grid + one restrained directional
+   light behind the cube. Deliberate and tonal — no RGB-blob slop. */
+.hero__grid {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 72px 72px;
+  -webkit-mask-image: radial-gradient(125% 95% at 72% 18%, #000 0%, transparent 68%);
+          mask-image: radial-gradient(125% 95% at 72% 18%, #000 0%, transparent 68%);
+  opacity: 0.6;
+}
+.hero__light {
+  position: absolute; z-index: 0; pointer-events: none;
+  width: 70vw; height: 70vw; right: -14%; top: -22%;
+  background: radial-gradient(circle at center,
+    color-mix(in oklab, var(--accent) 22%, transparent) 0%,
+    transparent 58%);
+  filter: blur(38px); opacity: 0.5;
+}
 
 .hero__cube {
   position: absolute; z-index: 1; right: clamp(-3rem, -2vw, 2rem); top: 47%;
@@ -126,10 +139,19 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
 @keyframes bob { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(4px);} }
 
 .hero__marquee {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
-  border-top: 1px solid var(--line-soft); padding-block: 0.9rem;
-  font-size: clamp(1rem, 0.8rem + 1vw, 1.6rem); color: var(--text);
-  background: color-mix(in oklab, var(--bg) 60%, transparent); backdrop-filter: blur(6px);
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
+  border-top: 1px solid var(--line);
+  background: color-mix(in oklab, var(--bg-inset) 90%, transparent);
+  backdrop-filter: blur(10px) saturate(120%);
+}
+.hero__marquee .vmarquee__item {
+  padding: 0.95rem 0;
+  font-family: var(--font-display); font-weight: 600; letter-spacing: -0.01em;
+  font-size: clamp(1rem, 0.8rem + 0.9vw, 1.5rem); color: var(--text);
+}
+.hero__marquee .vmarquee__item > .icon {
+  width: 0.62em; height: 0.62em; color: var(--accent);
+  margin-inline: clamp(1.4rem, 3vw, 2.6rem);
 }
 
 /* ---------- Section heads / titles ---------- */
@@ -290,6 +312,28 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
 .lang__bar i { display: block; height: 100%; width: var(--p); border-radius: 100px; background: var(--grad-cool); transform-origin: 0 50%; }
 
 /* ---------- 04 Projets (STAR accordion) ---------- */
+/* Kinetic, scroll-velocity-linked band heading the section */
+.projets__kinetic {
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  display: grid; gap: clamp(0.1rem, 0.5vw, 0.4rem);
+  border-block: 1px solid var(--line); padding-block: clamp(0.6rem, 1.6vw, 1.2rem);
+}
+.vmarquee--xl .vmarquee__row {
+  padding-right: 0.5em;
+  font-family: var(--font-display); font-weight: 600; line-height: 1;
+  font-size: clamp(2.4rem, 1rem + 6.8vw, 7rem); letter-spacing: -0.035em;
+  color: var(--text);
+}
+.vmarquee--xl .vmarquee__row i {
+  font-style: normal; color: var(--accent);
+  font-size: 0.42em; padding-inline: 0.55em; transform: translateY(-0.18em);
+}
+.vmarquee--outline .vmarquee__row {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-faint);
+}
+.vmarquee--outline .vmarquee__row i { -webkit-text-stroke: 0; color: var(--accent-2); }
+
 .projects { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .project { border-bottom: 1px solid var(--line); }
 .project__head {

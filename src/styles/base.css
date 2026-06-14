@@ -46,26 +46,6 @@ h1, h2, h3, h4, p { margin: 0; }
   background: radial-gradient(120% 100% at 50% 0%, transparent 55%, rgba(0,0,0,0.45) 100%);
 }
 
-/* — Custom cursor (fine pointers only; JS-driven) — */
-.cursor-dot, .cursor-ring {
-  position: fixed; top: 0; left: 0; z-index: 9500; pointer-events: none;
-  border-radius: 50%; mix-blend-mode: difference;
-  opacity: 0; transition: opacity .3s ease;
-}
-.cursor-dot  { width: 7px; height: 7px; background: #fff; }
-.cursor-ring {
-  width: 38px; height: 38px; border: 1px solid rgba(255,255,255,0.7);
-  transition: width .35s var(--ease-out), height .35s var(--ease-out),
-              background .35s var(--ease-out), opacity .3s ease;
-}
-.cursor-ready .cursor-dot, .cursor-ready .cursor-ring { opacity: 1; }
-.cursor-hover .cursor-ring { width: 64px; height: 64px; background: rgba(255,255,255,0.12); }
-.cursor-down  .cursor-ring { width: 26px; height: 26px; }
-@media (hover: hover) and (pointer: fine) {
-  body.cursor-ready { cursor: none; }
-  body.cursor-ready a, body.cursor-ready button { cursor: none; }
-}
-
 /* — Layout primitives — */
 .container {
   width: 100%; max-width: var(--maxw);
@@ -124,37 +104,33 @@ h1, h2, h3, h4, p { margin: 0; }
 }
 .btn--ghost:hover { border-color: var(--text); background: rgba(244,242,236,0.05); }
 
-/* — Status pill — */
+/* — Status pill — refined availability chip (no LED slop) — */
 .status-pill {
-  display: inline-flex; align-items: center; gap: 0.55em;
-  font-family: var(--font-mono); font-size: var(--fs-xs);
-  letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft);
+  display: inline-flex; align-items: center; gap: 0.7em;
+  padding: 0.5em 0.85em; border: 1px solid var(--line); border-radius: 100px;
+  background: color-mix(in oklab, var(--text) 3%, transparent);
+  font-family: var(--font-mono); font-size: var(--fs-2xs);
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-soft);
+  transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
 }
-.dot {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--c-g); box-shadow: 0 0 0 0 var(--glow-g);
-  animation: pulse 2.4s var(--ease-inout) infinite;
+.status-pill:hover { border-color: var(--line-strong); background: color-mix(in oklab, var(--text) 6%, transparent); }
+.status-pill__mark {
+  width: 6px; height: 6px; transform: rotate(45deg);
+  border: 1px solid var(--text-mute); border-radius: 1px;
 }
-@keyframes pulse {
-  0%,100% { box-shadow: 0 0 0 0 rgba(37,224,138,0.5); }
-  50%     { box-shadow: 0 0 0 7px rgba(37,224,138,0); }
+.status-pill__txt { color: var(--text); }
+.status-pill__sub {
+  padding-left: 0.7em; color: var(--text-mute);
+  border-left: 1px solid var(--line);
 }
 
-/* — Marquee (infinite scrolling strip) — */
-.marquee { overflow: hidden; width: 100%; }
-.marquee__track {
-  display: inline-flex; gap: 2.5rem; padding-block: inherit;
-  white-space: nowrap; will-change: transform;
-  animation: marquee 32s linear infinite;
+/* — Velocity marquee (scroll-velocity-linked horizontal strip; JS-driven) — */
+.vmarquee { overflow: hidden; width: 100%; }
+.vmarquee__track {
+  display: inline-flex; flex-wrap: nowrap; white-space: nowrap;
+  will-change: transform; transform-origin: 0 50%;
 }
-.marquee:hover .marquee__track { animation-play-state: paused; }
-.marquee--rev .marquee__track { animation-direction: reverse; }
-.marquee__item {
-  display: inline-flex; align-items: center; gap: 2.5rem;
-  font-family: var(--font-display); font-weight: 600;
-}
-.marquee__item .icon { width: 0.8em; height: 0.8em; color: var(--accent); }
-@keyframes marquee { to { transform: translateX(-50%); } }
+.vmarquee__item, .vmarquee__row { display: inline-flex; align-items: center; flex: none; }
 
 /* — Accessibility — */
 .sr-only {
@@ -179,7 +155,6 @@ h1, h2, h3, h4, p { margin: 0; }
      screenshots don't balloon — */
 html.still .hero, html.still .hero__inner { min-height: 820px; }
 html.still .divider { height: 560px; }
-html.still .cursor-dot, html.still .cursor-ring { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -187,5 +162,4 @@ html.still .cursor-dot, html.still .cursor-ring { display: none; }
     transition-duration: 0.001ms !important; scroll-behavior: auto !important;
   }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
-  .marquee__track { animation: none !important; }
 }
