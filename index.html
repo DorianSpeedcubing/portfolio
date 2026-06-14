@@ -7,7 +7,7 @@
   <title>Dorian Bellet — Développeur &amp; Speedcuber</title>
   <meta name="description" content="Portfolio de Dorian Bellet — étudiant en BUT Informatique à l'IUT d'Orsay, développeur et speedcuber. À la recherche d'un stage (avril → juillet 2026)." />
   <meta name="author" content="Dorian Bellet" />
-  <meta name="theme-color" content="#f4f1ea" />
+  <meta name="theme-color" content="#0a0a10" />
   <link rel="canonical" href="https://dorianbellet.fr/" />
 
   <!-- Open Graph / Twitter -->
@@ -15,7 +15,6 @@
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:title" content="Dorian Bellet — Développeur &amp; Speedcuber" />
   <meta property="og:description" content="Étudiant développeur & speedcuber. Portfolio — à la recherche d'un stage, avril → juillet 2026." />
-  <!-- TODO(dorian): remplace dorianbellet.fr par ton domaine final (canonical + og:image) -->
   <meta property="og:image" content="https://dorianbellet.fr/media/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Dorian Bellet — Développeur & Speedcuber" />
@@ -45,7 +44,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <script type="module" src="/src/main.js"></script>
 </head>
@@ -53,6 +54,31 @@
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
 
+  <!-- ===== SVG sprite (all icons — no emoji anywhere) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2c.4 5.3 4.3 9.6 10 10-5.7.4-9.6 4.3-10 10-.4-5.7-4.3-9.6-10-10 5.7-.4 9.6-4.3 10-10Z"/></symbol>
+      <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6"/></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+      <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M5 20h14"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7.5 4h9v3.5a4.5 4.5 0 0 1-9 0V4Z"/><path d="M7.5 5H5a2.5 2.5 0 0 0 2.5 2.5M16.5 5H19a2.5 2.5 0 0 1-2.5 2.5M12 12v4M9 20h6M10.5 16.5h3"/></symbol>
+      <symbol id="i-cube" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M14 6l-4 12"/></symbol>
+      <symbol id="i-piano" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/><path d="M6 4v6h2V4M11 4v6h2V4M16 4v6h2V4" fill="currentColor" stroke="none"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5L19 7"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l1.5 5-2.2 1.3a12 12 0 0 0 5.4 5.4L15 13.5 20 15v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M6 9.5V18M6 6.2v.01M10.5 18v-5a2.5 2.5 0 0 1 5 0v5M10.5 18v-8.5"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.8 7-11a7 7 0 0 0-14 0c0 5.2 7 11 7 11Z"/><circle cx="12" cy="10" r="2.4"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
   <div class="progress" data-progress aria-hidden="true"></div>
 
   <header class="header" data-header>
@@ -65,13 +91,13 @@
       </a>
 
       <nav class="header__nav" aria-label="Sections du portfolio">
-        <a data-nav-link href="#profil">Profil</a>
-        <a data-nav-link href="#parcours">Parcours</a>
-        <a data-nav-link href="#stack">Stack</a>
-        <a data-nav-link href="#projets">Projets</a>
-        <a data-nav-link href="#speedcube">Speedcube</a>
-        <a data-nav-link href="#ambitions">Ambitions</a>
-        <a data-nav-link href="#contact">Contact</a>
+        <a data-nav-link href="#profil"><span>Profil</span></a>
+        <a data-nav-link href="#parcours"><span>Parcours</span></a>
+        <a data-nav-link href="#stack"><span>Stack</span></a>
+        <a data-nav-link href="#projets"><span>Projets</span></a>
+        <a data-nav-link href="#speedcube"><span>Speedcube</span></a>
+        <a data-nav-link href="#ambitions"><span>Ambitions</span></a>
+        <a data-nav-link href="#contact"><span>Contact</span></a>
       </nav>
 
       <div class="header__right">
@@ -87,51 +113,61 @@
 
     <!-- ============================== HERO ============================== -->
     <section class="hero" id="top">
-      <div class="hero__grid">
-        <div class="hero__intro">
-          <p class="eyebrow" data-reveal>Étudiant développeur · Speedcuber</p>
-          <h1 class="hero__name">
-            <span class="hero__name-1" data-scramble>Dorian</span>
-            <span class="hero__name-2 serif">Bellet</span>
-          </h1>
+      <div class="hero__mesh" aria-hidden="true">
+        <span class="blob blob--r"></span>
+        <span class="blob blob--b"></span>
+        <span class="blob blob--g"></span>
+      </div>
+
+      <canvas id="cube" class="hero__cube" aria-hidden="true"></canvas>
+
+      <div class="hero__inner container">
+        <p class="hero__eyebrow eyebrow" data-reveal>
+          <svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>
+          Étudiant développeur · Speedcuber
+        </p>
+
+        <h1 class="hero__title display">
+          <span class="line-mask"><span class="hero__l1" data-scramble>Dorian</span></span>
+          <span class="line-mask"><span class="hero__l2">Bellet</span></span>
+        </h1>
+
+        <div class="hero__foot">
           <p class="hero__lede" data-reveal>
             Passionné de développement depuis 3&nbsp;ans. Je cherche un stage de
             11&nbsp;à&nbsp;12&nbsp;semaines pour contribuer à de <span class="accent">vrais projets</span>
             et continuer à progresser.
           </p>
           <div class="hero__cta" data-reveal>
-            <a class="btn btn--solid" href="#contact" data-magnetic>Me contacter</a>
-            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download data-magnetic>
-              <span>↓</span> Télécharger le CV
+            <a class="btn btn--solid" href="#contact" data-magnetic>Me contacter
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-          </div>
-          <p class="hero__status" data-reveal>
-            <span class="dot" aria-hidden="true"></span>
-            Disponible · <span class="mono">20 avr → 10 juil 2026</span>
-          </p>
-        </div>
-
-        <div class="hero__stage" aria-hidden="true">
-          <span class="hero__wordmark">DB</span>
-          <canvas id="cube" class="hero__cube"></canvas>
-          <div class="hero__stage-meta mono">
-            <span>3×3×3</span><span>stickerless</span>
+            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download data-magnetic>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Télécharger le CV
+            </a>
           </div>
         </div>
       </div>
 
       <a class="hero__scroll mono" href="#profil" aria-label="Défiler vers le contenu">
         <span>défiler</span>
-        <span class="hero__scroll-line" aria-hidden="true"></span>
+        <svg class="icon" aria-hidden="true"><use href="#i-arrow-down"/></svg>
       </a>
+
+      <div class="hero__marquee marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <span class="marquee__item">Speedcuber<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Développeur<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>BUT Informatique<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Disponible · Avril 2026<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span>
+          <span class="marquee__item">Speedcuber<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Développeur<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>BUT Informatique<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg>Disponible · Avril 2026<svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg></span>
+        </div>
+      </div>
     </section>
 
     <!-- ============================== 01 PROFIL ============================== -->
     <section class="section profil" id="profil">
       <div class="container profil__grid">
         <header class="section-head" data-reveal>
-          <p class="eyebrow">01 — profil</p>
-          <h2 class="section-title serif">Curiosité,<br />transformée en projets.</h2>
+          <p class="eyebrow">01 · profil</p>
+          <h2 class="section-title display" data-reveal-lines>Curiosité, transformée <span class="serif">en projets.</span></h2>
         </header>
 
         <div class="profil__body">
@@ -148,26 +184,32 @@
 
           <dl class="coords" data-reveal>
             <div class="coords__row">
-              <dt>Adresse</dt><dd>21 rue André Maginot, Orsay</dd>
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Adresse</dt>
+              <dd>21 rue André Maginot, Orsay</dd>
             </div>
             <div class="coords__row">
-              <dt>Email</dt><dd><a href="mailto:dorian.belletmac@gmail.com">dorian.belletmac@gmail.com</a></dd>
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email</dt>
+              <dd><a href="mailto:dorian.belletmac@gmail.com">dorian.belletmac@gmail.com</a></dd>
             </div>
             <div class="coords__row">
-              <dt>Téléphone</dt><dd><a href="tel:+33780286002">07&nbsp;80&nbsp;28&nbsp;60&nbsp;02</a></dd>
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Téléphone</dt>
+              <dd><a href="tel:+33780286002">07&nbsp;80&nbsp;28&nbsp;60&nbsp;02</a></dd>
             </div>
             <div class="coords__row">
-              <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">dorian-bellet-mac&nbsp;↗</a></dd>
+              <dt><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</dt>
+              <dd><a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">dorian-bellet-mac <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a></dd>
             </div>
           </dl>
         </div>
 
-        <figure class="profil__photo" data-reveal>
-          <picture>
-            <source srcset="./media/vista.webp" type="image/webp" />
-            <img src="./media/vista.jpg" alt="Dorian Bellet assis face à un panorama de montagnes"
-                 width="1500" height="2000" loading="lazy" decoding="async" data-lightbox />
-          </picture>
+        <figure class="profil__photo media-reveal" data-reveal>
+          <div class="media-reveal__frame">
+            <picture>
+              <source srcset="./media/vista.webp" type="image/webp" />
+              <img src="./media/vista.jpg" alt="Dorian Bellet assis face à un panorama de montagnes"
+                   width="1500" height="2000" loading="lazy" decoding="async" data-lightbox />
+            </picture>
+          </div>
           <figcaption class="mono">Prise de hauteur · 2025</figcaption>
         </figure>
       </div>
@@ -175,30 +217,30 @@
 
     <!-- ============================== DIVIDER A ============================== -->
     <section class="divider" data-parallax-wrap aria-label="Photographie">
-      <picture class="divider__media">
-        <source srcset="./media/hero-golden.webp" type="image/webp" />
-        <img src="./media/hero-golden.jpg" data-parallax data-lightbox
-             alt="Dorian Bellet au coucher du soleil, un cube à la main, face aux montagnes"
-             width="1500" height="2000" loading="lazy" decoding="async" />
-      </picture>
+      <div class="divider__media">
+        <picture>
+          <source srcset="./media/hero-golden.webp" type="image/webp" />
+          <img src="./media/hero-golden.jpg" data-parallax data-lightbox
+               alt="Dorian Bellet au coucher du soleil, un cube à la main, face aux montagnes"
+               width="1500" height="2000" loading="lazy" decoding="async" />
+        </picture>
+      </div>
       <div class="divider__overlay container">
-        <p class="divider__quote serif">« Résoudre, c'est transformer le désordre en méthode. »</p>
+        <p class="divider__quote display" data-reveal-lines>Résoudre, c'est transformer le désordre <span class="serif">en méthode.</span></p>
       </div>
     </section>
 
     <!-- ============================== 02 PARCOURS ============================== -->
-    <section class="section parcours" id="parcours">
+    <section class="section parcours section--panel" id="parcours">
       <div class="container">
-        <header class="section-head section-head--row" data-reveal>
-          <div>
-            <p class="eyebrow">02 — parcours</p>
-            <h2 class="section-title serif">Formation &amp; expériences</h2>
-          </div>
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">02 · parcours</p>
+          <h2 class="section-title display" data-reveal-lines>Formation &amp; expériences</h2>
         </header>
 
         <div class="parcours__grid">
           <div class="track">
-            <h3 class="track__label mono">Formation</h3>
+            <h3 class="track__label mono">// Formation</h3>
 
             <article class="tl" data-reveal>
               <span class="tl__date mono">2024 — en cours</span>
@@ -216,9 +258,8 @@
           </div>
 
           <div class="track">
-            <h3 class="track__label mono">Expériences</h3>
+            <h3 class="track__label mono">// Expériences</h3>
 
-            <!-- TODO(dorian): confirmer les dates exactes et préciser les missions du stage USTS -->
             <article class="tl tl--current" data-reveal>
               <span class="tl__date mono">2026 · en cours</span>
               <h4 class="tl__title">Stagiaire — USTS</h4>
@@ -228,7 +269,7 @@
 
             <article class="tl tl--target" data-reveal>
               <span class="tl__date mono">20 avr → 10 juil 2026</span>
-              <h4 class="tl__title">Stage recherché <span aria-hidden="true">🔍</span></h4>
+              <h4 class="tl__title">Stage recherché <svg class="icon tl__seek" aria-hidden="true"><use href="#i-search"/></svg></h4>
               <p class="tl__place">Développement · Île-de-France / France</p>
               <p class="tl__desc">Disponible pour un stage en développement web, logiciel ou systèmes.</p>
             </article>
@@ -248,8 +289,8 @@
     <section class="section stack" id="stack">
       <div class="container">
         <header class="section-head" data-reveal>
-          <p class="eyebrow">03 — stack &amp; compétences</p>
-          <h2 class="section-title serif">Ce que je maîtrise</h2>
+          <p class="eyebrow">03 · stack &amp; compétences</p>
+          <h2 class="section-title display" data-reveal-lines>Ce que je maîtrise</h2>
         </header>
 
         <div class="stack__grid">
@@ -281,11 +322,11 @@
               <h3 class="stack__group-title mono">Langues</h3>
               <ul class="langs">
                 <li>
-                  <div class="lang__row"><span class="lang__flag" aria-hidden="true">🇫🇷</span><span class="lang__name">Français</span><span class="lang__lvl mono">C2 — maternelle</span></div>
+                  <div class="lang__row"><span class="lang__code mono">FR</span><span class="lang__name">Français</span><span class="lang__lvl mono">C2 — maternelle</span></div>
                   <span class="lang__bar"><i style="--p:100%"></i></span>
                 </li>
                 <li>
-                  <div class="lang__row"><span class="lang__flag" aria-hidden="true">🇬🇧</span><span class="lang__name">Anglais</span><span class="lang__lvl mono">B1 — intermédiaire</span></div>
+                  <div class="lang__row"><span class="lang__code mono">EN</span><span class="lang__name">Anglais</span><span class="lang__lvl mono">B1 — intermédiaire</span></div>
                   <span class="lang__bar"><i style="--p:55%"></i></span>
                 </li>
               </ul>
@@ -303,15 +344,14 @@
     </section>
 
     <!-- ============================== 04 PROJETS ============================== -->
-    <section class="section projets" id="projets">
+    <section class="section projets section--panel" id="projets">
       <div class="container">
         <header class="section-head" data-reveal>
-          <p class="eyebrow">04 — projets · méthode STAR</p>
-          <h2 class="section-title serif">Réalisations</h2>
+          <p class="eyebrow">04 · projets · méthode STAR</p>
+          <h2 class="section-title display" data-reveal-lines>Réalisations</h2>
         </header>
 
         <ul class="projects">
-          <!-- TODO(dorian): remplacer les href="#" par les vraies URLs GitHub -->
           <li class="project is-open" data-reveal>
             <button class="project__head" aria-expanded="true" aria-controls="p1">
               <span class="project__idx mono">01</span>
@@ -335,7 +375,7 @@
                   <div class="star__cell" style="--f:var(--c-o)"><span class="star__k mono">A — Action</span><p>Java &amp; SQL pour la logique métier, HTML/CSS pour l'interface. Collaboration et versioning via GitLab.</p></div>
                   <div class="star__cell" style="--f:var(--c-g)"><span class="star__k mono">R — Résultat</span><p>Application fonctionnelle livrée en trinôme. Maîtrise du travail collaboratif et de l'intégration multi-langages.</p></div>
                 </div>
-                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub ↗</a>
+                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
               </div>
             </div>
           </li>
@@ -362,7 +402,7 @@
                   <div class="star__cell" style="--f:var(--c-o)"><span class="star__k mono">A — Action</span><p>Développé en HTML et CSS, répartition des tâches en binôme avec versioning Git.</p></div>
                   <div class="star__cell" style="--f:var(--c-g)"><span class="star__k mono">R — Résultat</span><p>Site fonctionnel livré dans les délais, respectant le cahier des charges.</p></div>
                 </div>
-                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub ↗</a>
+                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
               </div>
             </div>
           </li>
@@ -388,7 +428,7 @@
                   <div class="star__cell" style="--f:var(--c-o)"><span class="star__k mono">A — Action</span><p>Codé en C++ — boucle de jeu, détection de collision et logique de contrainte de zone.</p></div>
                   <div class="star__cell" style="--f:var(--c-g)"><span class="star__k mono">R — Résultat</span><p>Personnage confiné à la zone définie, jeu jouable et fonctionnel.</p></div>
                 </div>
-                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub ↗</a>
+                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
               </div>
             </div>
           </li>
@@ -413,29 +453,32 @@
                   <div class="star__cell" style="--f:var(--c-o)"><span class="star__k mono">A — Action</span><p>Jeu en console codé en Python — logique de mise, tirage aléatoire, affichage du résultat.</p></div>
                   <div class="star__cell" style="--f:var(--c-g)"><span class="star__k mono">R — Résultat</span><p>Premier projet fonctionnel — point de départ de ma passion pour le développement.</p></div>
                 </div>
-                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub ↗</a>
+                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
               </div>
             </div>
           </li>
         </ul>
       </div>
     </section>
+
     <!-- ============================== SPEEDCUBE ============================== -->
-    <section class="section section--dark speedcube" id="speedcube">
+    <section class="section speedcube" id="speedcube">
+      <div class="speedcube__aura" aria-hidden="true"></div>
       <div class="container">
         <header class="speedcube__head">
           <div data-reveal>
-            <p class="eyebrow">✦ speedcube</p>
-            <h2 class="section-title serif">Sept ans à<br />chercher la vitesse.</h2>
+            <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg> speedcube</p>
+            <h2 class="section-title display" data-reveal-lines>Sept ans à chercher <span class="serif">la vitesse.</span></h2>
           </div>
-          <!-- TODO(dorian): mettre l'URL de ton profil WCA -->
-          <a class="btn btn--ghost speedcube__wca" href="https://www.worldcubeassociation.org/" target="_blank" rel="noopener" data-magnetic>Profil WCA ↗</a>
+          <a class="btn btn--ghost speedcube__wca" href="https://www.worldcubeassociation.org/" target="_blank" rel="noopener" data-magnetic>Profil WCA
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg>
+          </a>
         </header>
 
         <dl class="sc-stats" data-reveal>
-          <div class="sc-stat"><dd class="sc-stat__v mono">7</dd><dt class="sc-stat__k">ans de cube</dt></div>
-          <div class="sc-stat"><dd class="sc-stat__v mono">2</dd><dt class="sc-stat__k">victoires</dt></div>
-          <div class="sc-stat"><dd class="sc-stat__v mono">5</dd><dt class="sc-stat__k">épreuves</dt></div>
+          <div class="sc-stat"><dd class="sc-stat__v mono" data-count="7">7</dd><dt class="sc-stat__k">ans de cube</dt></div>
+          <div class="sc-stat"><dd class="sc-stat__v mono" data-count="2">2</dd><dt class="sc-stat__k">victoires</dt></div>
+          <div class="sc-stat"><dd class="sc-stat__v mono" data-count="5">5</dd><dt class="sc-stat__k">épreuves</dt></div>
         </dl>
 
         <div class="pb-block" data-reveal>
@@ -446,35 +489,39 @@
         </div>
 
         <div class="sc-lower">
-          <div class="sc-media" data-reveal>
-            <figure class="sc-video">
-              <video poster="./media/comp.jpg" muted loop autoplay playsinline preload="metadata"
-                     width="1900" height="1267">
-                <source src="./media/solve.mp4" type="video/mp4" />
-              </video>
+          <div class="sc-media">
+            <figure class="sc-video media-reveal" data-reveal>
+              <div class="media-reveal__frame">
+                <video poster="./media/comp.jpg" muted loop autoplay playsinline preload="metadata"
+                       width="1900" height="1267">
+                  <source src="./media/solve.mp4" type="video/mp4" />
+                </video>
+              </div>
               <figcaption class="mono">Solve en compétition · loop</figcaption>
             </figure>
-            <figure class="sc-photo">
-              <picture>
-                <source srcset="./media/comp.webp" type="image/webp" />
-                <img src="./media/comp.jpg" alt="Dorian Bellet résolvant un 3×3 en compétition"
-                     width="1900" height="1267" loading="lazy" decoding="async" data-lightbox />
-              </picture>
+            <figure class="sc-photo media-reveal" data-reveal>
+              <div class="media-reveal__frame">
+                <picture>
+                  <source srcset="./media/comp.webp" type="image/webp" />
+                  <img src="./media/comp.jpg" alt="Dorian Bellet résolvant un 3×3 en compétition"
+                       width="1900" height="1267" loading="lazy" decoding="async" data-lightbox />
+                </picture>
+              </div>
               <figcaption class="mono">Association Française de Speedcubing</figcaption>
             </figure>
           </div>
 
           <div class="palmares" data-reveal>
-            <h3 class="palmares__label mono">Palmarès</h3>
+            <h3 class="palmares__label mono">// Palmarès</h3>
             <article class="win">
-              <span class="win__medal" aria-hidden="true">🏆</span>
+              <span class="win__medal" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></span>
               <div>
                 <h4 class="win__title">Compétition de Lille</h4>
                 <p class="win__meta mono">Juin 2025 · Lille, France</p>
               </div>
             </article>
             <article class="win">
-              <span class="win__medal" aria-hidden="true">🏆</span>
+              <span class="win__medal" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-trophy"/></svg></span>
               <div>
                 <h4 class="win__title">Compétition de Madrid</h4>
                 <p class="win__meta mono">Juillet 2025 · Madrid, Espagne</p>
@@ -492,54 +539,57 @@
 
     <!-- ============================== DIVIDER B ============================== -->
     <section class="divider divider--b" data-parallax-wrap aria-label="Photographie">
-      <picture class="divider__media">
-        <source srcset="./media/sky-cube.webp" type="image/webp" />
-        <img src="./media/sky-cube.jpg" data-parallax data-lightbox
-             alt="Dorian Bellet observant un cube, face à un ciel dégagé"
-             width="1700" height="2267" loading="lazy" decoding="async" />
-      </picture>
+      <div class="divider__media">
+        <picture>
+          <source srcset="./media/sky-cube.webp" type="image/webp" />
+          <img src="./media/sky-cube.jpg" data-parallax data-lightbox
+               alt="Dorian Bellet observant un cube, face à un ciel dégagé"
+               width="1700" height="2267" loading="lazy" decoding="async" />
+        </picture>
+      </div>
       <div class="divider__overlay container">
-        <p class="divider__quote serif">« Chaque seconde gagnée en appelle une autre. »</p>
+        <p class="divider__quote display" data-reveal-lines>Chaque seconde gagnée <span class="serif">en appelle une autre.</span></p>
       </div>
     </section>
+
     <!-- ============================== 05 AMBITIONS ============================== -->
-    <section class="section ambitions" id="ambitions">
+    <section class="section ambitions section--panel" id="ambitions">
       <div class="container">
         <header class="section-head" data-reveal>
-          <p class="eyebrow">05 — ambitions &amp; centres d'intérêt</p>
-          <h2 class="section-title serif">Vision &amp; passions</h2>
+          <p class="eyebrow">05 · ambitions &amp; centres d'intérêt</p>
+          <h2 class="section-title display" data-reveal-lines>Vision &amp; passions</h2>
         </header>
 
-        <div class="horizons">
-          <article class="horizon" data-reveal>
-            <span class="horizon__tag mono">Court terme · 0–1 an</span>
+        <ol class="horizons">
+          <li class="horizon" data-reveal>
+            <span class="horizon__tag mono"><span class="horizon__n">01</span> Court terme · 0–1 an</span>
             <p class="horizon__text">Valider mon stage et terminer ma 2<sup>e</sup> année de BUT avec de bons résultats.</p>
-          </article>
-          <article class="horizon" data-reveal>
-            <span class="horizon__tag mono">Moyen terme · 1–3 ans</span>
+          </li>
+          <li class="horizon" data-reveal>
+            <span class="horizon__tag mono"><span class="horizon__n">02</span> Moyen terme · 1–3 ans</span>
             <p class="horizon__text">Terminer le BUT et poursuivre en Master ou école d'ingénieur, spécialisé en développement logiciel.</p>
-          </article>
-          <article class="horizon" data-reveal>
-            <span class="horizon__tag mono">Long terme · 3 ans +</span>
+          </li>
+          <li class="horizon" data-reveal>
+            <span class="horizon__tag mono"><span class="horizon__n">03</span> Long terme · 3 ans +</span>
             <p class="horizon__text">Exercer en tant que développeur ou ingénieur logiciel sur des projets techniques ambitieux.</p>
-          </article>
-        </div>
+          </li>
+        </ol>
 
-        <h3 class="interests__label mono" data-reveal>Centres d'intérêt</h3>
+        <h3 class="interests__label mono" data-reveal>// Centres d'intérêt</h3>
         <div class="interests">
-          <a class="interest interest--link" href="#speedcube" data-reveal>
-            <span class="interest__icon" aria-hidden="true">🔲</span>
+          <a class="interest interest--link" href="#speedcube" data-reveal style="--f:var(--c-r)">
+            <span class="interest__icon" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-cube"/></svg></span>
             <h4 class="interest__title">Rubik's cube</h4>
             <p class="interest__text">Speedcuber depuis 7&nbsp;ans. Lauréat de 2 compétitions — Lille (juin 2025) et Madrid (juillet 2025).</p>
-            <span class="interest__more mono">voir les records ↓</span>
+            <span class="interest__more mono">voir les records <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-down"/></svg></span>
           </a>
-          <article class="interest" data-reveal>
-            <span class="interest__icon" aria-hidden="true">🐍</span>
+          <article class="interest" data-reveal style="--f:var(--c-g)">
+            <span class="interest__icon" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg></span>
             <h4 class="interest__title">Développement</h4>
             <p class="interest__text">Autodidacte sur Python depuis 3&nbsp;ans. J'aime créer des petits projets perso et expérimenter de nouveaux outils.</p>
           </article>
-          <article class="interest" data-reveal>
-            <span class="interest__icon" aria-hidden="true">🎹</span>
+          <article class="interest" data-reveal style="--f:var(--c-b)">
+            <span class="interest__icon" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-piano"/></svg></span>
             <h4 class="interest__title">Piano</h4>
             <p class="interest__text">La Lettre à Élise, La Marche Turque. Discipline et créativité.</p>
           </article>
@@ -549,24 +599,29 @@
 
     <!-- ============================== 06 CONTACT ============================== -->
     <section class="section contact" id="contact">
+      <div class="contact__aura" aria-hidden="true"></div>
       <div class="container contact__grid">
         <div class="contact__intro">
           <header class="section-head" data-reveal>
-            <p class="eyebrow">06 — contact</p>
-            <h2 class="section-title serif">Entrons<br />en contact.</h2>
+            <p class="eyebrow">06 · contact</p>
+            <h2 class="section-title display contact__title" data-reveal-lines>Entrons <span class="serif">en contact.</span></h2>
           </header>
           <p class="contact__avail" data-reveal>
             Disponible pour un stage de 11&nbsp;à&nbsp;12&nbsp;semaines à partir du
             <span class="accent">20&nbsp;avril&nbsp;2026</span>.
           </p>
           <ul class="contact__list" data-reveal>
-            <li><span class="contact__k mono">Email</span><a href="mailto:dorian.belletmac@gmail.com">dorian.belletmac@gmail.com</a></li>
-            <li><span class="contact__k mono">Téléphone</span><a href="tel:+33780286002">07&nbsp;80&nbsp;28&nbsp;60&nbsp;02</a></li>
-            <li><span class="contact__k mono">LinkedIn</span><a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">dorian-bellet-mac&nbsp;↗</a></li>
+            <li><span class="contact__k mono"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email</span><a href="mailto:dorian.belletmac@gmail.com">dorian.belletmac@gmail.com</a></li>
+            <li><span class="contact__k mono"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Téléphone</span><a href="tel:+33780286002">07&nbsp;80&nbsp;28&nbsp;60&nbsp;02</a></li>
+            <li><span class="contact__k mono"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</span><a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">dorian-bellet-mac <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a></li>
           </ul>
           <div class="contact__cta" data-reveal>
-            <a class="btn btn--solid" href="mailto:dorian.belletmac@gmail.com" data-magnetic>Envoyer un email</a>
-            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download data-magnetic><span>↓</span> Télécharger le CV</a>
+            <a class="btn btn--solid" href="mailto:dorian.belletmac@gmail.com" data-magnetic>Envoyer un email
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download data-magnetic>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Télécharger le CV
+            </a>
           </div>
         </div>
 
@@ -580,7 +635,7 @@
 <span class="t-key">Formation</span>  : BUT Informatique — IUT Orsay
 <span class="t-key">Durée</span>      : 11–12 semaines
 <span class="t-key">Période</span>    : 20 avril → 10 juillet 2026
-<span class="t-key">Statut</span>     : <span class="t-ok">✓ disponible</span>
+<span class="t-key">Statut</span>     : <span class="t-ok"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check"/></svg> disponible</span>
 <span class="t-prompt">~/portfolio $</span> <span class="t-caret">_</span></code></pre>
         </div>
       </div>
@@ -594,7 +649,7 @@
         Dorian Bellet
       </a>
       <p class="footer__meta mono">BUT Informatique · IUT Orsay · 2026</p>
-      <a class="footer__link mono" href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="footer__link mono" href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">LinkedIn <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
     </div>
   </footer>
 </body>

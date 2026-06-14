@@ -2,19 +2,26 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/sections.css';
 
-import { initScroll, reveal, parallax, initNav } from './lib/scroll.js';
+import { initScroll, reveal, revealLines, revealMedia, counters, heroIntro, parallax, initNav } from './lib/scroll.js';
 import { initProjects } from './lib/projects.js';
 import { initSpeedcube } from './lib/speedcube.js';
 import { initScramble } from './lib/scramble.js';
 import { initTimer } from './lib/timer.js';
 import { initLightbox } from './lib/lightbox.js';
 import { initMagnetic } from './lib/magnetic.js';
+import { initCursor } from './lib/cursor.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// `?still` = screenshot/QA mode: render every section in its final, visible
+// state (no scroll-triggered hiding), so full-page captures aren't blank below
+// the fold. Harmless in production.
+const STILL = new URLSearchParams(location.search).has('still');
 
 function boot() {
   document.documentElement.classList.add('js');
+  if (STILL) document.documentElement.classList.add('still');
 
-  // 3D cube + cursor reactivity — lazy-loaded so Three.js doesn't block first paint.
+  // 3D cube — lazy-loaded so Three.js doesn't block first paint.
   const canvas = document.getElementById('cube');
   if (canvas) {
     import('./lib/cube.js').then(({ initCube }) => {
@@ -29,14 +36,23 @@ function boot() {
 
   // Smooth scroll + scroll-driven motion + nav
   const lenis = initScroll();
-  reveal();
-  parallax();
+  if (!STILL) {
+    heroIntro();
+    reveal();
+    revealLines();
+    revealMedia();
+    counters();
+    parallax();
+    initScramble();
+    initCursor();
+  }
   initNav(lenis);
+
+  // Interactions
   initProjects();
   initSpeedcube();
   initTimer();
   initLightbox();
-  initScramble();
   initMagnetic();
 
   // Recompute trigger positions once webfonts/images settle.

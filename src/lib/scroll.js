@@ -10,7 +10,7 @@ const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 export function initScroll() {
   if (reduced) return null;
   const lenis = new Lenis({
-    duration: 1.1,
+    duration: 1.15,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     wheelMultiplier: 1,
     touchMultiplier: 1.6,
@@ -21,18 +21,92 @@ export function initScroll() {
   return lenis;
 }
 
-/** Fade/rise reveal for every [data-reveal]; staggers siblings sharing a parent. */
+/** Fade/rise reveal for every [data-reveal]. */
 export function reveal() {
   if (reduced) return;
   gsap.utils.toArray('[data-reveal]').forEach((el) => {
     gsap.from(el, {
-      y: 26,
+      y: 34,
       opacity: 0,
-      duration: 0.6,
+      duration: 0.8,
       ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+    });
+  });
+}
+
+/**
+ * Word-by-word masked rise for headings/quotes ([data-reveal-lines]).
+ * Splits text nodes into masked words; element children (e.g. .serif) rise
+ * as a single unit. Skipped under reduced-motion (text left untouched).
+ */
+export function revealLines() {
+  if (reduced) return;
+  gsap.utils.toArray('[data-reveal-lines]').forEach((el) => {
+    const nodes = Array.from(el.childNodes);
+    const targets = [];
+    el.textContent = '';
+    nodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.textContent.split(/(\s+)/).forEach((part) => {
+          if (part === '') return;
+          if (part.trim() === '') { el.appendChild(document.createTextNode(part)); return; }
+          const mask = document.createElement('span'); mask.className = 'word';
+          const inner = document.createElement('i'); inner.textContent = part;
+          mask.appendChild(inner); el.appendChild(mask); targets.push(inner);
+        });
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        const mask = document.createElement('span'); mask.className = 'word';
+        mask.appendChild(node); el.appendChild(mask); targets.push(node);
+      } else {
+        el.appendChild(node);
+      }
+    });
+    gsap.from(targets, {
+      yPercent: 118,
+      opacity: 0,
+      duration: 0.95,
+      ease: 'power4.out',
+      stagger: 0.055,
       scrollTrigger: { trigger: el, start: 'top 86%', once: true },
     });
   });
+}
+
+/** Clip-path wipe + image push-in for framed media (.media-reveal__frame). */
+export function revealMedia() {
+  if (reduced) return;
+  gsap.utils.toArray('.media-reveal__frame').forEach((frame) => {
+    const media = frame.querySelector('img, video');
+    const tl = gsap.timeline({ scrollTrigger: { trigger: frame, start: 'top 88%', once: true } });
+    tl.fromTo(frame,
+      { clipPath: 'inset(0 0 100% 0)' },
+      { clipPath: 'inset(0 0 0% 0)', duration: 1.05, ease: 'power3.out' });
+    if (media) tl.from(media, { scale: 1.28, duration: 1.25, ease: 'power3.out' }, 0);
+  });
+}
+
+/** Animated count-up for [data-count] numbers. */
+export function counters() {
+  if (reduced) return;
+  gsap.utils.toArray('[data-count]').forEach((el) => {
+    const end = parseFloat(el.dataset.count) || 0;
+    const obj = { v: 0 };
+    gsap.to(obj, {
+      v: end, duration: 1.5, ease: 'power2.out',
+      scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+      onUpdate: () => { el.textContent = Math.round(obj.v); },
+    });
+  });
+}
+
+/** One-shot hero entrance: masked wordmark rise. */
+export function heroIntro() {
+  if (reduced) return;
+  const lines = gsap.utils.toArray('.hero__l1, .hero__l2');
+  if (!lines.length) return;
+  gsap.set(lines, { yPercent: 112 });
+  gsap.to(lines, { yPercent: 0, duration: 1.15, ease: 'power4.out', stagger: 0.12, delay: 0.1 });
 }
 
 /** Vertical parallax for full-bleed divider media ([data-parallax]). */
@@ -63,10 +137,8 @@ export function initNav(lenis) {
   const menuBtn = document.querySelector('[data-menu-toggle]');
 
   const byId = new Map(links.map((l) => [l.getAttribute('href').slice(1), l]));
-
   const headerH = () => (header ? header.offsetHeight : 0);
 
-  // Smooth-scroll anchor clicks (works with or without Lenis).
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
       const id = a.getAttribute('href');
@@ -81,27 +153,22 @@ export function initNav(lenis) {
     });
   });
 
-  // Active-section tracking.
   const setActive = (id) => links.forEach((l) => l.classList.toggle('is-active', l === byId.get(id)));
   const sections = links
     .map((l) => document.getElementById(l.getAttribute('href').slice(1)))
     .filter(Boolean);
   const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((en) => { if (en.isIntersecting) setActive(en.target.id); });
-    },
+    (entries) => { entries.forEach((en) => { if (en.isIntersecting) setActive(en.target.id); }); },
     { rootMargin: '-45% 0px -50% 0px', threshold: 0 },
   );
   sections.forEach((s) => io.observe(s));
 
-  // Shrink header after leaving the hero.
   if (header) {
     const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
 
-  // Scroll-progress bar.
   if (bar) {
     const update = () => {
       const max = document.documentElement.scrollHeight - window.innerHeight;
@@ -112,7 +179,6 @@ export function initNav(lenis) {
     update();
   }
 
-  // Mobile menu.
   function closeMenu() {
     document.documentElement.classList.remove('menu-open');
     if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');

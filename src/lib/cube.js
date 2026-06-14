@@ -51,7 +51,7 @@ export function initCube(canvas) {
   const pivot = new THREE.Group();
   cubeGroup.add(pivot);
 
-  const C = { R: 0xe01818, O: 0xff6a00, W: 0xf4f4f2, Y: 0xffd200, G: 0x12b24a, B: 0x1466dc, K: 0x0e0e0e };
+  const C = { R: 0xff3b46, O: 0xff8a1e, W: 0xf4f2ec, Y: 0xffd23f, G: 0x25e08a, B: 0x4d7bff, K: 0x0c0c12 };
   const size = 1, gap = 0.05, step = size + gap;
   const cubies = [];
 
