@@ -195,4 +195,10 @@ export function initNav(lenis) {
     });
   }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+  // Dismiss the compact dropdown when tapping anywhere outside it
+  document.addEventListener('click', (e) => {
+    if (!document.documentElement.classList.contains('menu-open')) return;
+    if (e.target.closest('.header__nav') || e.target.closest('[data-menu-toggle]')) return;
+    closeMenu();
+  });
 }
