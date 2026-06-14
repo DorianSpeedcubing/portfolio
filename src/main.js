@@ -6,6 +6,11 @@ import { initCube } from './lib/cube.js';
 import { initScroll, reveal, parallax, initNav } from './lib/scroll.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Dev-only "still" mode (?still): disables Lenis + scroll reveals so any
+// section can be screenshotted in place. Compiled out of production builds.
+const STILL = import.meta.env.DEV && new URLSearchParams(location.search).has('still');
+if (STILL) document.documentElement.classList.add('is-still');
+
 function boot() {
   document.documentElement.classList.add('js');
 
@@ -21,10 +26,14 @@ function boot() {
   }
 
   // Smooth scroll + scroll-driven motion + nav
-  const lenis = initScroll();
-  reveal();
-  parallax();
+  const lenis = STILL ? null : initScroll();
+  if (!STILL) { reveal(); parallax(); }
   initNav(lenis);
+
+  if (STILL && location.hash) {
+    const t = document.querySelector(location.hash);
+    if (t) requestAnimationFrame(() => requestAnimationFrame(() => t.scrollIntoView()));
+  }
 
   // Recompute trigger positions once webfonts/images settle.
   window.addEventListener('load', () => ScrollTrigger.refresh());

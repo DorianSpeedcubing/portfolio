@@ -107,17 +107,279 @@
       </a>
     </section>
 
-    <!-- 01 PROFIL (phase 4) -->
-    <!-- DIVIDER A (phase 4) -->
-    <!-- 02 PARCOURS (phase 4) -->
-    <!-- 03 STACK (phase 4) -->
+    <!-- ============================== 01 PROFIL ============================== -->
+    <section class="section profil" id="profil">
+      <div class="container profil__grid">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">01 — profil</p>
+          <h2 class="section-title serif">Curiosité,<br />transformée en projets.</h2>
+        </header>
+
+        <div class="profil__body">
+          <p class="lede" data-reveal>
+            Je suis en 2<sup>e</sup> année de BUT Informatique à l'IUT d'Orsay
+            (Université Paris-Saclay). Passionné de développement depuis 3&nbsp;ans, j'ai commencé
+            en autodidacte avec <span class="accent">Python</span> avant d'intégrer le BUT.
+          </p>
+          <p data-reveal>
+            Je recherche un stage rémunéré de 11&nbsp;à&nbsp;12&nbsp;semaines, du
+            20&nbsp;avril au 10&nbsp;juillet&nbsp;2026, pour mettre en pratique mes compétences
+            sur des projets concrets.
+          </p>
+
+          <dl class="coords" data-reveal>
+            <div class="coords__row">
+              <dt>Adresse</dt><dd>21 rue André Maginot, Orsay</dd>
+            </div>
+            <div class="coords__row">
+              <dt>Email</dt><dd><a href="mailto:dorian.belletmac@gmail.com">dorian.belletmac@gmail.com</a></dd>
+            </div>
+            <div class="coords__row">
+              <dt>Téléphone</dt><dd><a href="tel:+33780286002">07&nbsp;80&nbsp;28&nbsp;60&nbsp;02</a></dd>
+            </div>
+            <div class="coords__row">
+              <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">dorian-bellet-mac&nbsp;↗</a></dd>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="profil__photo" data-reveal>
+          <picture>
+            <source srcset="./media/vista.webp" type="image/webp" />
+            <img src="./media/vista.jpg" alt="Dorian Bellet assis face à un panorama de montagnes"
+                 width="1500" height="2000" loading="lazy" decoding="async" data-lightbox />
+          </picture>
+          <figcaption class="mono">Prise de hauteur · 2025</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============================== DIVIDER A ============================== -->
+    <section class="divider" data-parallax-wrap aria-label="Photographie">
+      <picture class="divider__media">
+        <source srcset="./media/hero-golden.webp" type="image/webp" />
+        <img src="./media/hero-golden.jpg" data-parallax data-lightbox
+             alt="Dorian Bellet au coucher du soleil, un cube à la main, face aux montagnes"
+             width="1500" height="2000" loading="lazy" decoding="async" />
+      </picture>
+      <div class="divider__overlay container">
+        <p class="divider__quote serif">« Résoudre, c'est transformer le désordre en méthode. »</p>
+      </div>
+    </section>
+
+    <!-- ============================== 02 PARCOURS ============================== -->
+    <section class="section parcours" id="parcours">
+      <div class="container">
+        <header class="section-head section-head--row" data-reveal>
+          <div>
+            <p class="eyebrow">02 — parcours</p>
+            <h2 class="section-title serif">Formation &amp; expériences</h2>
+          </div>
+        </header>
+
+        <div class="parcours__grid">
+          <div class="track">
+            <h3 class="track__label mono">Formation</h3>
+
+            <article class="tl" data-reveal>
+              <span class="tl__date mono">2024 — en cours</span>
+              <h4 class="tl__title">BUT Informatique</h4>
+              <p class="tl__place">IUT d'Orsay · Université Paris-Saclay</p>
+              <p class="tl__desc">Développement web &amp; logiciel, algorithmique, bases de données, réseaux, systèmes, gestion de projet agile.</p>
+            </article>
+
+            <article class="tl" data-reveal>
+              <span class="tl__date mono">2024</span>
+              <h4 class="tl__title">Baccalauréat Général</h4>
+              <p class="tl__place">Lycée Peter Pan · Antananarivo, Madagascar</p>
+              <p class="tl__desc">Spécialités Mathématiques &amp; NSI (Numérique et Sciences Informatiques). <span class="tl__badge">Mention Bien</span></p>
+            </article>
+          </div>
+
+          <div class="track">
+            <h3 class="track__label mono">Expériences</h3>
+
+            <!-- TODO(dorian): confirmer les dates exactes et préciser les missions du stage USTS -->
+            <article class="tl tl--current" data-reveal>
+              <span class="tl__date mono">2026 · en cours</span>
+              <h4 class="tl__title">Stagiaire — USTS</h4>
+              <p class="tl__place">Automatisation · workflows n8n</p>
+              <p class="tl__desc">Conception de workflows d'automatisation <strong>n8n</strong> pour la génération et le traitement d'images et de vidéos.</p>
+            </article>
+
+            <article class="tl tl--target" data-reveal>
+              <span class="tl__date mono">20 avr → 10 juil 2026</span>
+              <h4 class="tl__title">Stage recherché <span aria-hidden="true">🔍</span></h4>
+              <p class="tl__place">Développement · Île-de-France / France</p>
+              <p class="tl__desc">Disponible pour un stage en développement web, logiciel ou systèmes.</p>
+            </article>
+
+            <article class="tl" data-reveal>
+              <span class="tl__date mono">Été 2025</span>
+              <h4 class="tl__title">Stage agricole <span class="tl__bonus">bonus</span></h4>
+              <p class="tl__place">Granada, Espagne</p>
+              <p class="tl__desc">Entretien des cultures, construction (maçonnerie, transport de matériaux). Management participatif et prise de décision.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 03 STACK ============================== -->
+    <section class="section stack" id="stack">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">03 — stack &amp; compétences</p>
+          <h2 class="section-title serif">Ce que je maîtrise</h2>
+        </header>
+
+        <div class="stack__grid">
+          <div class="stack__face-wrap" data-reveal>
+            <p class="stack__face-label mono">// langages &amp; outils</p>
+            <ul class="skill-face" aria-label="Technologies principales">
+              <li style="--f:var(--c-r)">Python</li>
+              <li style="--f:var(--c-o)">Java</li>
+              <li style="--f:var(--c-g)">C++</li>
+              <li style="--f:var(--c-y)">HTML</li>
+              <li style="--f:var(--c-w)">CSS</li>
+              <li style="--f:var(--c-b)">SQL</li>
+              <li style="--f:var(--c-g)">Git</li>
+              <li style="--f:var(--c-r)">Docker</li>
+              <li style="--f:var(--c-b)">Linux</li>
+            </ul>
+          </div>
+
+          <div class="stack__lists">
+            <div class="stack__group" data-reveal>
+              <h3 class="stack__group-title mono">Outils &amp; environnements</h3>
+              <ul class="chips">
+                <li>Linux</li><li>Git</li><li>GitHub</li><li>GitLab</li><li>VS Code</li>
+                <li>IntelliJ</li><li>MySQL</li><li>Docker</li><li>n8n</li>
+              </ul>
+            </div>
+
+            <div class="stack__group" data-reveal>
+              <h3 class="stack__group-title mono">Langues</h3>
+              <ul class="langs">
+                <li>
+                  <div class="lang__row"><span class="lang__flag" aria-hidden="true">🇫🇷</span><span class="lang__name">Français</span><span class="lang__lvl mono">C2 — maternelle</span></div>
+                  <span class="lang__bar"><i style="--p:100%"></i></span>
+                </li>
+                <li>
+                  <div class="lang__row"><span class="lang__flag" aria-hidden="true">🇬🇧</span><span class="lang__name">Anglais</span><span class="lang__lvl mono">B1 — intermédiaire</span></div>
+                  <span class="lang__bar"><i style="--p:55%"></i></span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="stack__group" data-reveal>
+              <h3 class="stack__group-title mono">Soft skills</h3>
+              <ul class="chips chips--soft">
+                <li>Motivé</li><li>Organisé</li><li>Adaptabilité</li><li>Travail collaboratif</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 04 PROJETS (phase 5) -->
     <!-- SPEEDCUBE (phase 6) -->
     <!-- DIVIDER B (phase 7/8) -->
-    <!-- 05 AMBITIONS (phase 4) -->
-    <!-- 06 CONTACT (phase 4) -->
+    <!-- ============================== 05 AMBITIONS ============================== -->
+    <section class="section ambitions" id="ambitions">
+      <div class="container">
+        <header class="section-head" data-reveal>
+          <p class="eyebrow">05 — ambitions &amp; centres d'intérêt</p>
+          <h2 class="section-title serif">Vision &amp; passions</h2>
+        </header>
+
+        <div class="horizons">
+          <article class="horizon" data-reveal>
+            <span class="horizon__tag mono">Court terme · 0–1 an</span>
+            <p class="horizon__text">Valider mon stage et terminer ma 2<sup>e</sup> année de BUT avec de bons résultats.</p>
+          </article>
+          <article class="horizon" data-reveal>
+            <span class="horizon__tag mono">Moyen terme · 1–3 ans</span>
+            <p class="horizon__text">Terminer le BUT et poursuivre en Master ou école d'ingénieur, spécialisé en développement logiciel.</p>
+          </article>
+          <article class="horizon" data-reveal>
+            <span class="horizon__tag mono">Long terme · 3 ans +</span>
+            <p class="horizon__text">Exercer en tant que développeur ou ingénieur logiciel sur des projets techniques ambitieux.</p>
+          </article>
+        </div>
+
+        <h3 class="interests__label mono" data-reveal>Centres d'intérêt</h3>
+        <div class="interests">
+          <a class="interest interest--link" href="#speedcube" data-reveal>
+            <span class="interest__icon" aria-hidden="true">🔲</span>
+            <h4 class="interest__title">Rubik's cube</h4>
+            <p class="interest__text">Speedcuber depuis 7&nbsp;ans. Lauréat de 2 compétitions — Lille (juin 2025) et Madrid (juillet 2025).</p>
+            <span class="interest__more mono">voir les records ↓</span>
+          </a>
+          <article class="interest" data-reveal>
+            <span class="interest__icon" aria-hidden="true">🐍</span>
+            <h4 class="interest__title">Développement</h4>
+            <p class="interest__text">Autodidacte sur Python depuis 3&nbsp;ans. J'aime créer des petits projets perso et expérimenter de nouveaux outils.</p>
+          </article>
+          <article class="interest" data-reveal>
+            <span class="interest__icon" aria-hidden="true">🎹</span>
+            <h4 class="interest__title">Piano</h4>
+            <p class="interest__text">La Lettre à Élise, La Marche Turque. Discipline et créativité.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 06 CONTACT ============================== -->
+    <section class="section contact" id="contact">
+      <div class="container contact__grid">
+        <div class="contact__intro">
+          <header class="section-head" data-reveal>
+            <p class="eyebrow">06 — contact</p>
+            <h2 class="section-title serif">Entrons<br />en contact.</h2>
+          </header>
+          <p class="contact__avail" data-reveal>
+            Disponible pour un stage de 11&nbsp;à&nbsp;12&nbsp;semaines à partir du
+            <span class="accent">20&nbsp;avril&nbsp;2026</span>.
+          </p>
+          <ul class="contact__list" data-reveal>
+            <li><span class="contact__k mono">Email</span><a href="mailto:dorian.belletmac@gmail.com">dorian.belletmac@gmail.com</a></li>
+            <li><span class="contact__k mono">Téléphone</span><a href="tel:+33780286002">07&nbsp;80&nbsp;28&nbsp;60&nbsp;02</a></li>
+            <li><span class="contact__k mono">LinkedIn</span><a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">dorian-bellet-mac&nbsp;↗</a></li>
+          </ul>
+          <div class="contact__cta" data-reveal>
+            <a class="btn btn--solid" href="mailto:dorian.belletmac@gmail.com" data-magnetic>Envoyer un email</a>
+            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download data-magnetic><span>↓</span> Télécharger le CV</a>
+          </div>
+        </div>
+
+        <div class="terminal" data-reveal>
+          <div class="terminal__bar">
+            <span class="terminal__dot"></span><span class="terminal__dot"></span><span class="terminal__dot"></span>
+            <span class="terminal__name mono">contact.sh</span>
+          </div>
+          <pre class="terminal__body mono" data-typewriter><code><span class="t-prompt">~/portfolio $</span> cat stage.txt
+<span class="t-key">Candidat</span>   : Dorian Bellet
+<span class="t-key">Formation</span>  : BUT Informatique — IUT Orsay
+<span class="t-key">Durée</span>      : 11–12 semaines
+<span class="t-key">Période</span>    : 20 avril → 10 juillet 2026
+<span class="t-key">Statut</span>     : <span class="t-ok">✓ disponible</span>
+<span class="t-prompt">~/portfolio $</span> <span class="t-caret">_</span></code></pre>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- footer injected by Phase 4 -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a class="footer__mark" href="#top">
+        <span class="header__mark-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        Dorian Bellet
+      </a>
+      <p class="footer__meta mono">BUT Informatique · IUT Orsay · 2026</p>
+      <a class="footer__link mono" href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </footer>
 </body>
 </html>
