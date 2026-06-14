@@ -109,16 +109,21 @@ export function heroIntro() {
   gsap.to(lines, { yPercent: 0, duration: 1.15, ease: 'power4.out', stagger: 0.12, delay: 0.1 });
 }
 
-/** Vertical parallax for full-bleed divider media ([data-parallax]). */
+/**
+ * Scroll-driven vertical reveal for full-bleed divider portraits ([data-parallax]).
+ * The cover crop pans top→bottom as the divider passes through the viewport, so
+ * the whole subject is revealed across the scroll instead of only the sky.
+ * Drives the `--oy` object-position var (cheap, GPU-friendly).
+ */
 export function parallax() {
   if (reduced) return;
   gsap.utils.toArray('[data-parallax]').forEach((el) => {
     const wrap = el.closest('[data-parallax-wrap]') || el.parentElement;
     gsap.fromTo(
       el,
-      { yPercent: -8 },
+      { '--oy': '16%' },
       {
-        yPercent: 8,
+        '--oy': '86%',
         ease: 'none',
         scrollTrigger: { trigger: wrap, start: 'top bottom', end: 'bottom top', scrub: true },
       },
