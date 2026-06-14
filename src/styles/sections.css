@@ -223,7 +223,7 @@
 .divider__media { position: absolute; inset: -8% 0; }
 .divider__media img { width: 100%; height: 116%; object-fit: cover; object-position: center 38%; }
 .divider::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7,7,7,0.15), rgba(7,7,7,0.45)); }
-.divider__overlay { position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end; padding-bottom: clamp(2rem, 6vw, 5rem); }
+.divider__overlay { position: absolute; inset: 0; z-index: 2; display: flex; align-items: flex-end; padding-bottom: clamp(2rem, 6vw, 5rem); pointer-events: none; }
 .divider__quote { color: #fff; font-size: var(--fs-h1); line-height: 1.1; max-width: 18ch; letter-spacing: -0.01em; text-shadow: 0 2px 30px rgba(0,0,0,0.4); }
 
 /* ============================== 02 PARCOURS ============================== */
