@@ -106,13 +106,6 @@ h1, h2, h3, h4, p { margin: 0; }
 /* — Reveal default state (JS adds motion; this is the resting/fallback look) — */
 [data-reveal] { will-change: transform, opacity; }
 
-/* Dev-only "still" capture mode: cap viewport-relative heights so full-page
-   screenshots don't balloon. */
-html.is-still .hero { min-height: 720px; }
-html.is-still .hero__stage { min-height: 0; }
-html.is-still .divider { height: 420px; }
-html.is-still .profil__photo img { max-height: 520px; }
-
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }

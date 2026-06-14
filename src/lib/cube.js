@@ -199,6 +199,7 @@ export function initCube(canvas) {
     renderer.render(scene, camera);
   };
   animate();
+  requestAnimationFrame(() => canvas.classList.add('is-ready'));
 
   const onResize = () => {
     const r = rect();
