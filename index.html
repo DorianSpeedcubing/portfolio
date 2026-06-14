@@ -34,7 +34,35 @@
 <body>
   <a class="skip-link" href="#main">Aller au contenu</a>
 
-  <!-- header / nav injected by Phase 2 -->
+  <div class="progress" data-progress aria-hidden="true"></div>
+
+  <header class="header" data-header>
+    <div class="header__inner container">
+      <a class="header__mark" href="#top" aria-label="Dorian Bellet — accueil">
+        <span class="header__mark-grid" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </span>
+        <span class="header__mark-text">Dorian Bellet</span>
+      </a>
+
+      <nav class="header__nav" aria-label="Sections du portfolio">
+        <a data-nav-link href="#profil">Profil</a>
+        <a data-nav-link href="#parcours">Parcours</a>
+        <a data-nav-link href="#stack">Stack</a>
+        <a data-nav-link href="#projets">Projets</a>
+        <a data-nav-link href="#speedcube">Speedcube</a>
+        <a data-nav-link href="#ambitions">Ambitions</a>
+        <a data-nav-link href="#contact">Contact</a>
+      </nav>
+
+      <div class="header__right">
+        <span class="status-pill"><span class="dot" aria-hidden="true"></span><span class="status-pill__txt">Disponible</span></span>
+        <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Ouvrir le menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
   <main id="main">
 
