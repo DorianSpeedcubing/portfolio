@@ -54,13 +54,6 @@
   top: 0; bottom: auto; left: auto; right: 0; width: 44%; height: 46%;
   background-position: right top; opacity: .09; --ink-dur: 21s;
 }
-.ink--smoke .ink__art {
-  background-image: url(/media/ink/smoke.png);
-  background-image: image-set(url(/media/ink/smoke.webp) type('image/webp'),
-                              url(/media/ink/smoke.png) type('image/png'));
-  top: auto; bottom: 0; right: auto; left: 0; width: 38%; height: 55%;
-  background-position: left bottom; opacity: .09; --ink-dur: 19s;
-}
 .ink--flower .ink__art {
   background-image: url(/media/ink/flower.png);
   background-image: image-set(url(/media/ink/flower.webp) type('image/webp'),

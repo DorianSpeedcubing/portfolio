@@ -15,6 +15,5 @@ All images are recolored to white-on-transparent via `npm run ink:process`
 | clouds | 祥云 clouds | pngtree | TODO: replace with CC0 |
 | bamboo | bamboo ink | pngtree | TODO: replace with CC0 |
 | flower | plum/sakura branch | Adobe Stock preview | TODO: replace with CC0 |
-| smoke | ink smoke | pngtree | TODO: replace with CC0 |
 | inkwave | wave swirls | png-clipart | TODO: replace with CC0 |
 | swirl | vertical flourish | clip-art | TODO: replace with CC0 |

@@ -17,7 +17,6 @@ const jobs = [
   { src: 'clouds.jpg',       name: 'clouds',       floor: 18, gain: 1.9 },
   { src: 'bamboo.jpg',       name: 'bamboo',       floor: 18, gain: 1.9 },
   { src: 'flower.jpg',       name: 'flower',       floor: 18, gain: 1.9 },
-  { src: 'smoke.jpg',        name: 'smoke',        floor: 60, gain: 1.5 },
   { src: 'inkwave.jpg',      name: 'inkwave',      floor: 60, gain: 1.6 },
   { src: 'swirl.jpg',        name: 'swirl',        floor: 60, gain: 1.6 },
 ];
