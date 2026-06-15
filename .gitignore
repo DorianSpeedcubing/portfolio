@@ -5,7 +5,6 @@ dist
 .vite
 .claude/
 docs/
-scripts/
 media-src/
 
 # brainstorming visual companion
