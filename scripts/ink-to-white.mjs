@@ -14,6 +14,8 @@ mkdirSync(out, { recursive: true });
 // source file -> output name + tuned floor/gain (tuned during brainstorming)
 const jobs = [
   { src: 'dragon-smoke.png', name: 'dragon-smoke', floor: 62, gain: 1.5 },
+  // `clouds` is part of the motif library but intentionally not placed in the
+  // current sparse layout — kept available for future section tweaks.
   { src: 'clouds.jpg',       name: 'clouds',       floor: 18, gain: 1.9 },
   { src: 'bamboo.jpg',       name: 'bamboo',       floor: 18, gain: 1.9 },
   { src: 'flower.jpg',       name: 'flower',       floor: 18, gain: 1.9 },
