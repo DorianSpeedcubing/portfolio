@@ -449,7 +449,6 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
 
 /* ---------- Speedcube ---------- */
 .speedcube { position: relative; overflow: hidden; }
-.speedcube .container { position: relative; z-index: 1; }
 .speedcube__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .speedcube__head .section-title { margin-bottom: 0; }
 .speedcube__wca { flex: none; }

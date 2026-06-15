@@ -5,6 +5,11 @@
 
 /* Lift real content above the z-0 ink layer. */
 .container { position: relative; z-index: 1; }
+/* Restore stacking the global rule would otherwise tie & override (both are
+   .container too): hero title must stay above the cube canvas (z-1), and the
+   divider quote above its ::before gradient (z-1). */
+.hero__inner { z-index: 2; }
+.divider__overlay { z-index: 2; }
 
 .ink {
   position: absolute;
