@@ -45,16 +45,41 @@ export function initTimer() {
   const loop = (now) => { render(now - startT); raf = requestAnimationFrame(loop); };
   const typing = () => /^(input|textarea|select)$/i.test(document.activeElement?.tagName || '');
 
-  window.addEventListener('keydown', (e) => {
-    if (e.code !== 'Space' || !active || typing()) return;
-    e.preventDefault();
-    if (e.repeat) return;
+  const onPressStart = () => {
+    if (!active) return;
     if (state === 'idle' || state === 'stopped') { setState('ready'); render(0); }
     else if (state === 'running') { cancelAnimationFrame(raf); render(performance.now() - startT); setState('stopped'); }
+  };
+
+  const onPressEnd = () => {
+    if (!active) return;
+    if (state === 'ready') { startT = performance.now(); setState('running'); raf = requestAnimationFrame(loop); }
+  };
+
+  window.addEventListener('keydown', (e) => {
+    if (e.code !== 'Space' || typing()) return;
+    e.preventDefault();
+    if (e.repeat) return;
+    onPressStart();
   });
 
   window.addEventListener('keyup', (e) => {
-    if (e.code !== 'Space' || !active || typing()) return;
-    if (state === 'ready') { startT = performance.now(); setState('running'); raf = requestAnimationFrame(loop); }
+    if (e.code !== 'Space' || typing()) return;
+    onPressEnd();
   });
+
+  el.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    onPressStart();
+  }, { passive: false });
+
+  el.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    onPressEnd();
+  }, { passive: false });
+
+  if ('ontouchstart' in window) {
+    const hint = el.querySelector('.sc-timer__hint');
+    if (hint) hint.textContent = 'Maintenez puis relâchez pour chronométrer un solve';
+  }
 }
