@@ -200,6 +200,9 @@ export function runPath() {
  */
 export function stackCards() {
   if (reduced) return;
+  // On mobile the cards are non-sticky (taller than the viewport), so the
+  // scale/dim stacking would just shrink them mid-scroll. Leave them flat.
+  if (window.matchMedia('(max-width: 900px)').matches) return;
   const cards = gsap.utils.toArray('[data-stack-card]');
   cards.forEach((card, i) => {
     const inner = card.querySelector('[data-stack-inner]');

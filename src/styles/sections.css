@@ -763,6 +763,11 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
   .run__split:nth-of-type(odd)  .run__node,
   .run__split:nth-of-type(even) .run__node { left: 0; right: auto; }
 
+  /* Vertical cards can exceed the viewport, so the sticky stack would pin a
+     card at the top and let the next one cover its bottom (the "Résultat"
+     stage) before it scrolls into view. Flow them normally on mobile instead. */
+  .stackcard { position: static; }
+
   /* STAR sequence folds to a vertical run of stages */
   .seq { grid-template-columns: 1fr; row-gap: 1.4rem; }
   .seq__step { border-left: 0; padding: 0 0 0 1.1rem; border-left: 2px solid color-mix(in oklab, var(--f) 45%, transparent); }
