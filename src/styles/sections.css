@@ -646,8 +646,8 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
   font-size: var(--fs-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft);
 }
 .footer__dot {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--c-g);
-  box-shadow: 0 0 0 0 var(--glow-g); animation: runPulse 2.6s var(--ease-out) infinite; --node: var(--c-g);
+  width: 6px; height: 6px; transform: rotate(45deg);
+  border: 1px solid var(--text-mute); border-radius: 1px;
 }
 .footer__totop {
   display: inline-flex; align-items: center; gap: 0.45rem;
