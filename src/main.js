@@ -10,6 +10,7 @@ import { initTimer } from './lib/timer.js';
 import { initLightbox } from './lib/lightbox.js';
 import { initVelocity } from './lib/velocity.js';
 import { initLoader } from './lib/loader.js';
+import { initBackdrop } from './lib/backdrop.js';
 import { initContact } from './lib/contact.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -51,6 +52,7 @@ function boot() {
   runPath();   // self-gates: draws the curve in still/reduced mode, animates otherwise
   initNav(lenis);
   initVelocity();
+  initBackdrop();
 
   // Interactions
   initSpeedcube();
