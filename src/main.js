@@ -1,6 +1,7 @@
 import './styles/tokens.css';
 import './styles/base.css';
 import './styles/sections.css';
+import './styles/ink.css';
 
 import { initScroll, reveal, revealLines, revealMedia, counters, heroIntro, parallax, runPath, stackCards, initNav } from './lib/scroll.js';
 import { initSpeedcube } from './lib/speedcube.js';

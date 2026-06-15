@@ -1,0 +1,84 @@
+/* Decorative ink backdrop — faint white Chinese-ink motifs behind content.
+   Purely decorative (markup is aria-hidden). Two layers: `.ink` positions the box
+   and is the parallax target (JS); `.ink__art` carries the image and the permanent
+   CSS "breathing". Keeping the two transforms on separate elements avoids clashes. */
+
+/* Lift real content above the z-0 ink layer. */
+.container { position: relative; z-index: 1; }
+
+.ink {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ink__art {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  will-change: transform;
+  animation: ink-breathe var(--ink-dur, 16s) ease-in-out infinite;
+}
+@keyframes ink-breathe {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-0.6deg); }
+  50%      { transform: translate3d(8px, -10px, 0) rotate(0.6deg); }
+}
+
+/* ---- per-motif: image + box + opacity + breathing speed ---- */
+.ink--dragon .ink__art {
+  background-image: url(/media/ink/dragon-smoke.png);
+  background-image: image-set(url(/media/ink/dragon-smoke.webp) type('image/webp'),
+                              url(/media/ink/dragon-smoke.png) type('image/png'));
+  left: auto; right: -6%; width: 62%; background-position: right center;
+  opacity: .15; --ink-dur: 13s;
+}
+.ink--bamboo .ink__art {
+  background-image: url(/media/ink/bamboo.png);
+  background-image: image-set(url(/media/ink/bamboo.webp) type('image/webp'),
+                              url(/media/ink/bamboo.png) type('image/png'));
+  right: auto; left: -2%; width: 30%; background-position: left bottom;
+  opacity: .11; --ink-dur: 17s;
+}
+.ink--inkwave .ink__art {
+  background-image: url(/media/ink/inkwave.png);
+  background-image: image-set(url(/media/ink/inkwave.webp) type('image/webp'),
+                              url(/media/ink/inkwave.png) type('image/png'));
+  top: auto; bottom: 4%; left: auto; right: 2%; width: 40%; height: 50%;
+  background-position: right bottom; opacity: .09; --ink-dur: 21s;
+}
+.ink--smoke .ink__art {
+  background-image: url(/media/ink/smoke.png);
+  background-image: image-set(url(/media/ink/smoke.webp) type('image/webp'),
+                              url(/media/ink/smoke.png) type('image/png'));
+  right: auto; left: 0; width: 40%; opacity: .09; --ink-dur: 19s;
+}
+.ink--flower .ink__art {
+  background-image: url(/media/ink/flower.png);
+  background-image: image-set(url(/media/ink/flower.webp) type('image/webp'),
+                              url(/media/ink/flower.png) type('image/png'));
+  bottom: auto; top: 2%; left: auto; right: -4%; width: 46%; height: 50%;
+  background-position: right top; opacity: .10; --ink-dur: 20s;
+}
+.ink--swirl .ink__art {
+  background-image: url(/media/ink/swirl.png);
+  background-image: image-set(url(/media/ink/swirl.webp) type('image/webp'),
+                              url(/media/ink/swirl.png) type('image/png'));
+  right: auto; left: 3%; width: 16%; background-position: left center;
+  opacity: .09; --ink-dur: 18s;
+}
+
+/* ---- lighter + calmer on small screens (legibility + perf) ---- */
+@media (max-width: 700px) {
+  .ink__art { opacity: .055 !important; }
+  .ink--dragon .ink__art, .ink--flower .ink__art { display: none; }
+}
+
+/* ---- accessibility / QA: freeze everything ---- */
+@media (prefers-reduced-motion: reduce) {
+  .ink__art { animation: none; transform: none; }
+}
+html.still .ink { transform: none; }
+html.still .ink__art { animation: none; transform: none; }
