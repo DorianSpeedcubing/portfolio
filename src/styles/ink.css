@@ -51,14 +51,15 @@
   background-image: url(/media/ink/inkwave.png);
   background-image: image-set(url(/media/ink/inkwave.webp) type('image/webp'),
                               url(/media/ink/inkwave.png) type('image/png'));
-  top: auto; bottom: 4%; left: auto; right: 2%; width: 40%; height: 50%;
-  background-position: right bottom; opacity: .09; --ink-dur: 21s;
+  top: 0; bottom: auto; left: auto; right: 0; width: 44%; height: 46%;
+  background-position: right top; opacity: .09; --ink-dur: 21s;
 }
 .ink--smoke .ink__art {
   background-image: url(/media/ink/smoke.png);
   background-image: image-set(url(/media/ink/smoke.webp) type('image/webp'),
                               url(/media/ink/smoke.png) type('image/png'));
-  right: auto; left: 0; width: 40%; opacity: .09; --ink-dur: 19s;
+  top: auto; bottom: 0; right: auto; left: 0; width: 38%; height: 55%;
+  background-position: left bottom; opacity: .09; --ink-dur: 19s;
 }
 .ink--flower .ink__art {
   background-image: url(/media/ink/flower.png);
@@ -71,8 +72,15 @@
   background-image: url(/media/ink/swirl.png);
   background-image: image-set(url(/media/ink/swirl.webp) type('image/webp'),
                               url(/media/ink/swirl.png) type('image/png'));
-  right: auto; left: 3%; width: 16%; background-position: left center;
+  left: auto; right: 3%; width: 16%; background-position: right center;
   opacity: .09; --ink-dur: 18s;
+}
+.ink--clouds .ink__art {
+  background-image: url(/media/ink/clouds.png);
+  background-image: image-set(url(/media/ink/clouds.webp) type('image/webp'),
+                              url(/media/ink/clouds.png) type('image/png'));
+  top: 3%; bottom: auto; left: auto; right: -4%; width: 52%; height: 46%;
+  background-position: right top; opacity: .08; --ink-dur: 23s;
 }
 
 /* ---- lighter + calmer on small screens (legibility + perf) ---- */
