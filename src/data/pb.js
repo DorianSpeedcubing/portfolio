@@ -3,18 +3,6 @@
 //  Source: World Cube Association profile.
 // ============================================================
 
-/** WCA profile summary. */
-export const WCA = {
-  id: '2019GERA06',
-  url: 'https://www.worldcubeassociation.org/persons/2019GERA06',
-  region: 'France',
-  competitions: 24,
-  solves: 1010,
-};
-
-/** Olympic-style medal tally across competitions. */
-export const MEDALS = { gold: 4, silver: 6, bronze: 5 };
-
 /**
  * Headline per-event cards. `single`/`ao5` are real PBs; `nr`/`wr` are the real
  * national / world ranks for the single. `trend` is an illustrative improvement
@@ -49,20 +37,6 @@ export const RECORDS = [
   { event: 'Pyraminx',           single: '5.17',    average: '7.83',    nr: 346, wr: 17921 },
   { event: 'Skewb',              single: '4.61',    average: '5.73',    nr: 220, wr: 10891 },
   { event: 'Square-1',           single: '12.14',   average: '21.38',   nr: 56,  wr: 2490 },
-];
-
-/** Headline counters (real). */
-export const STATS = [
-  { value: '7', label: 'ans de cube' },
-  { value: '24', label: 'compétitions' },
-  { value: '1010', label: 'résolutions' },
-];
-
-/** Notable competition podiums (real). */
-export const PALMARES = [
-  { title: 'Le Cube Normand Open 2026', meta: 'Finale · 1ʳᵉ place', note: '3×3 — record perso 5.70', rank: 'or' },
-  { title: 'Villanueva Open 2025',      meta: 'Finale · 1ʳᵉ place', note: '3×3', rank: 'or' },
-  { title: 'LexOpen France 2025',       meta: 'Finale · 2ᵉ place',  note: '3×3', rank: 'argent' },
 ];
 
 /**
