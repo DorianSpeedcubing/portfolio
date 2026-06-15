@@ -16,7 +16,6 @@ Built by **Jimmy ([wFuxi66](https://github.com/wFuxi66))** for Dorian Bellet.
 - [Lenis](https://lenis.darkroom.engineering/) (smooth scroll)
 - [Three.js](https://threejs.org/) (hero cube)
 - [Vitest](https://vitest.dev/) (unit tests)
-- [sharp](https://sharp.pixelplumbing.com/) (build-time image pipeline)
 
 ## Development
 
@@ -26,13 +25,6 @@ npm run dev        # local dev server
 npm test           # run the unit tests
 npm run build      # production build to dist/
 npm run preview    # serve the built site locally
-```
-
-### Build-time asset scripts
-
-```bash
-npm run optimize:media   # compress source media
-npm run ink:process      # recolor ink art to white-on-transparent (see scripts/)
 ```
 
 ## Deployment
@@ -47,5 +39,4 @@ Source code: [MIT](./LICENSE) © Jimmy (wFuxi66).
 
 The personal content (texts, photos, video, CV, name, branding of Dorian
 Bellet) is © Dorian Bellet, all rights reserved. The decorative ink images
-under `public/media/ink/` come from third-party stock sources — see
-[`public/media/ink/CREDITS.md`](./public/media/ink/CREDITS.md).
+under `public/media/ink/` come from third-party stock sources.
