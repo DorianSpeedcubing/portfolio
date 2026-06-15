@@ -132,6 +132,48 @@ export function parallax() {
 }
 
 /**
+ * "Solve Run" timeline: the spectrum spine fills top→bottom as the parcours
+ * section scrolls through the viewport, like a running solve timer. The fill
+ * defaults to full in CSS, so reduced-motion/still mode shows a completed run.
+ */
+export function runFill() {
+  if (reduced) return;
+  gsap.utils.toArray('[data-run]').forEach((run) => {
+    const fill = run.querySelector('[data-run-fill]');
+    if (!fill) return;
+    gsap.fromTo(fill,
+      { scaleY: 0 },
+      {
+        scaleY: 1, ease: 'none', transformOrigin: 'top',
+        scrollTrigger: { trigger: run, start: 'top 72%', end: 'bottom 78%', scrub: 0.6 },
+      });
+  });
+}
+
+/**
+ * "Solving stack": sticky project cards that scale down and dim as the next
+ * card rises from below and locks over them — depth on both scroll directions.
+ * The last card stays at full size. Skipped under reduced-motion (cards just
+ * sticky-stack flat).
+ */
+export function stackCards() {
+  if (reduced) return;
+  const cards = gsap.utils.toArray('[data-stack-card]');
+  cards.forEach((card, i) => {
+    const inner = card.querySelector('[data-stack-inner]');
+    const next = cards[i + 1];
+    if (!inner || !next) return;
+    const targetScale = 1 - (cards.length - 1 - i) * 0.035;
+    gsap.fromTo(inner,
+      { scale: 1, filter: 'brightness(1)' },
+      {
+        scale: targetScale, filter: 'brightness(0.72)', ease: 'none',
+        scrollTrigger: { trigger: next, start: 'top bottom', end: 'top top+=120', scrub: true },
+      });
+  });
+}
+
+/**
  * Sticky-nav behaviour: anchor smooth-scroll, active-section tracking,
  * scroll-progress bar, and a compact mobile menu toggle.
  */

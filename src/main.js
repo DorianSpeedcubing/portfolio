@@ -2,8 +2,7 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/sections.css';
 
-import { initScroll, reveal, revealLines, revealMedia, counters, heroIntro, parallax, initNav } from './lib/scroll.js';
-import { initProjects } from './lib/projects.js';
+import { initScroll, reveal, revealLines, revealMedia, counters, heroIntro, parallax, runFill, stackCards, initNav } from './lib/scroll.js';
 import { initSpeedcube } from './lib/speedcube.js';
 import { initScramble } from './lib/scramble.js';
 import { initTimer } from './lib/timer.js';
@@ -45,13 +44,14 @@ function boot() {
     revealMedia();
     counters();
     parallax();
+    runFill();
+    stackCards();
     initScramble();
   }
   initNav(lenis);
   initVelocity();
 
   // Interactions
-  initProjects();
   initSpeedcube();
   initTimer();
   initLightbox();

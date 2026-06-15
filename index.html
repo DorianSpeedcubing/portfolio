@@ -259,43 +259,59 @@
           <h2 class="section-title display" data-reveal-lines>Formation &amp; expériences</h2>
         </header>
 
-        <div class="parcours__grid">
-          <div class="track">
-            <h3 class="track__label mono">// Formation</h3>
+        <p class="run__legend mono" data-reveal>
+          <span class="run__legend-item" data-kind="form">Formation</span>
+          <span class="run__legend-item" data-kind="exp">Expérience</span>
+          <span class="run__legend-item run__legend-item--live">en cours</span>
+        </p>
 
-            <article class="tl" data-reveal>
-              <span class="tl__date mono">2024 — en cours</span>
-              <h4 class="tl__title">BUT Informatique</h4>
-              <p class="tl__place">IUT d'Orsay · Université Paris-Saclay</p>
-              <p class="tl__desc">Développement web &amp; logiciel, algorithmique, bases de données, réseaux, systèmes, gestion de projet agile.</p>
-            </article>
+        <ol class="run" data-run>
+          <span class="run__spine" aria-hidden="true"><i class="run__fill" data-run-fill></i></span>
 
-            <article class="tl" data-reveal>
-              <span class="tl__date mono">2024</span>
-              <h4 class="tl__title">Baccalauréat Général</h4>
-              <p class="tl__place">Lycée Peter Pan · Antananarivo, Madagascar</p>
-              <p class="tl__desc">Spécialités Mathématiques &amp; NSI (Numérique et Sciences Informatiques). <span class="tl__badge">Mention Bien</span></p>
-            </article>
-          </div>
+          <li class="run__split run__split--live" style="--node:var(--c-g)" data-reveal>
+            <span class="run__time mono"><b>2026</b><i>en cours</i></span>
+            <span class="run__node" aria-hidden="true"></span>
+            <div class="run__card">
+              <span class="run__type mono" data-kind="exp">Expérience</span>
+              <h3 class="run__title">Stagiaire — USTS</h3>
+              <p class="run__place">Automatisation · workflows n8n</p>
+              <p class="run__desc">Conception de workflows d'automatisation <strong>n8n</strong> pour la génération et le traitement d'images et de vidéos.</p>
+            </div>
+          </li>
 
-          <div class="track">
-            <h3 class="track__label mono">// Expériences</h3>
+          <li class="run__split run__split--ongoing" style="--node:var(--c-g)" data-reveal>
+            <span class="run__time mono"><b>2024</b><i>en cours</i></span>
+            <span class="run__node" aria-hidden="true"></span>
+            <div class="run__card">
+              <span class="run__type mono" data-kind="form">Formation</span>
+              <h3 class="run__title">BUT Informatique</h3>
+              <p class="run__place">IUT d'Orsay · Université Paris-Saclay</p>
+              <p class="run__desc">Développement web &amp; logiciel, algorithmique, bases de données, réseaux, systèmes, gestion de projet agile.</p>
+            </div>
+          </li>
 
-            <article class="tl tl--current" data-reveal>
-              <span class="tl__date mono">2026 · en cours</span>
-              <h4 class="tl__title">Stagiaire — USTS</h4>
-              <p class="tl__place">Automatisation · workflows n8n</p>
-              <p class="tl__desc">Conception de workflows d'automatisation <strong>n8n</strong> pour la génération et le traitement d'images et de vidéos.</p>
-            </article>
+          <li class="run__split" style="--node:var(--c-o)" data-reveal>
+            <span class="run__time mono"><b>2025</b><i>été</i></span>
+            <span class="run__node" aria-hidden="true"></span>
+            <div class="run__card">
+              <span class="run__type mono" data-kind="exp">Expérience <span class="run__bonus">bonus</span></span>
+              <h3 class="run__title">Stage agricole</h3>
+              <p class="run__place">Granada, Espagne</p>
+              <p class="run__desc">Entretien des cultures, construction (maçonnerie, transport de matériaux). Management participatif et prise de décision.</p>
+            </div>
+          </li>
 
-            <article class="tl" data-reveal>
-              <span class="tl__date mono">Été 2025</span>
-              <h4 class="tl__title">Stage agricole <span class="tl__bonus">bonus</span></h4>
-              <p class="tl__place">Granada, Espagne</p>
-              <p class="tl__desc">Entretien des cultures, construction (maçonnerie, transport de matériaux). Management participatif et prise de décision.</p>
-            </article>
-          </div>
-        </div>
+          <li class="run__split" style="--node:var(--c-b)" data-reveal>
+            <span class="run__time mono"><b>2024</b></span>
+            <span class="run__node" aria-hidden="true"></span>
+            <div class="run__card">
+              <span class="run__type mono" data-kind="form">Formation</span>
+              <h3 class="run__title">Baccalauréat Général</h3>
+              <p class="run__place">Lycée Peter Pan · Antananarivo, Madagascar</p>
+              <p class="run__desc">Spécialités Mathématiques &amp; NSI (Numérique et Sciences Informatiques). <span class="run__badge">Mention Bien</span></p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -380,113 +396,101 @@
           </div>
         </div>
 
-        <ul class="projects">
-          <li class="project is-open" data-reveal>
-            <button class="project__head" aria-expanded="true" aria-controls="p1">
-              <span class="project__idx mono">01</span>
-              <span class="project__title">Application de gestion de groupes TD/TP</span>
-              <span class="project__meta">
-                <span class="project__date mono">Déc. 2025</span>
-                <span class="project__tags">
-                  <span class="tag" style="--f:var(--c-o)">Java</span>
-                  <span class="tag" style="--f:var(--c-b)">SQL</span>
-                  <span class="tag" style="--f:var(--c-y)">HTML/CSS</span>
-                  <span class="tag" style="--f:var(--c-g)">GitLab</span>
-                </span>
-              </span>
-              <span class="project__toggle" aria-hidden="true"></span>
-            </button>
-            <div class="project__panel" id="p1" role="region">
-              <div class="project__panel-inner">
-                <div class="star">
-                  <div class="star__cell" style="--f:var(--c-b)"><span class="star__k mono">S — Situation</span><p>Projet de BUT en trinôme : concevoir une application de gestion d'une promotion d'élèves et de leurs groupes de TD/TP.</p></div>
-                  <div class="star__cell" style="--f:var(--c-y)"><span class="star__k mono">T — Tâche</span><p>Développer l'application complète — modèle de données, back-end Java, interface web — dans les délais impartis.</p></div>
-                  <div class="star__cell" style="--f:var(--c-o)"><span class="star__k mono">A — Action</span><p>Java &amp; SQL pour la logique métier, HTML/CSS pour l'interface. Collaboration et versioning via GitLab.</p></div>
-                  <div class="star__cell" style="--f:var(--c-g)"><span class="star__k mono">R — Résultat</span><p>Application fonctionnelle livrée en trinôme. Maîtrise du travail collaboratif et de l'intégration multi-langages.</p></div>
+        <div class="stack-cards">
+          <article class="stackcard" style="--i:0; --f:var(--c-o)" data-stack-card data-reveal>
+            <div class="stackcard__card" data-stack-inner>
+              <header class="stackcard__head">
+                <span class="stackcard__idx mono">01</span>
+                <div class="stackcard__id">
+                  <h3 class="stackcard__title">Application de gestion de groupes TD/TP</h3>
+                  <p class="stackcard__sub mono">Déc. 2025 · projet BUT · trinôme</p>
                 </div>
-                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
-              </div>
+                <ul class="stackcard__tags">
+                  <li class="tag" style="--f:var(--c-o)">Java</li>
+                  <li class="tag" style="--f:var(--c-b)">SQL</li>
+                  <li class="tag" style="--f:var(--c-y)">HTML/CSS</li>
+                  <li class="tag" style="--f:var(--c-g)">GitLab</li>
+                </ul>
+              </header>
+              <ol class="seq">
+                <li class="seq__step" style="--f:var(--c-b)"><span class="seq__ghost" aria-hidden="true">S</span><span class="seq__label mono">Situation</span><p>Projet de BUT en trinôme : concevoir une application de gestion d'une promotion d'élèves et de leurs groupes de TD/TP.</p></li>
+                <li class="seq__step" style="--f:var(--c-y)"><span class="seq__ghost" aria-hidden="true">T</span><span class="seq__label mono">Tâche</span><p>Développer l'application complète — modèle de données, back-end Java, interface web — dans les délais impartis.</p></li>
+                <li class="seq__step" style="--f:var(--c-o)"><span class="seq__ghost" aria-hidden="true">A</span><span class="seq__label mono">Action</span><p>Java &amp; SQL pour la logique métier, HTML/CSS pour l'interface. Collaboration et versioning via GitLab.</p></li>
+                <li class="seq__step" style="--f:var(--c-g)"><span class="seq__ghost" aria-hidden="true">R</span><span class="seq__label mono">Résultat</span><p>Application fonctionnelle livrée en trinôme. Maîtrise du travail collaboratif et de l'intégration multi-langages.</p></li>
+              </ol>
+              <a class="stackcard__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
             </div>
-          </li>
+          </article>
 
-          <li class="project" data-reveal>
-            <button class="project__head" aria-expanded="false" aria-controls="p2">
-              <span class="project__idx mono">02</span>
-              <span class="project__title">Site web — activité de divertissement</span>
-              <span class="project__meta">
-                <span class="project__date mono">Déc. 2024</span>
-                <span class="project__tags">
-                  <span class="tag" style="--f:var(--c-y)">HTML</span>
-                  <span class="tag" style="--f:var(--c-b)">CSS</span>
-                  <span class="tag" style="--f:var(--c-g)">Git</span>
-                </span>
-              </span>
-              <span class="project__toggle" aria-hidden="true"></span>
-            </button>
-            <div class="project__panel" id="p2" role="region">
-              <div class="project__panel-inner">
-                <div class="star">
-                  <div class="star__cell" style="--f:var(--c-b)"><span class="star__k mono">S — Situation</span><p>Projet BUT en binôme : créer un site web sur une activité de divertissement (choix libre), 3 pages au total.</p></div>
-                  <div class="star__cell" style="--f:var(--c-y)"><span class="star__k mono">T — Tâche</span><p>Concevoir la structure, le design et l'intégration du contenu en respectant les bonnes pratiques web.</p></div>
-                  <div class="star__cell" style="--f:var(--c-o)"><span class="star__k mono">A — Action</span><p>Développé en HTML et CSS, répartition des tâches en binôme avec versioning Git.</p></div>
-                  <div class="star__cell" style="--f:var(--c-g)"><span class="star__k mono">R — Résultat</span><p>Site fonctionnel livré dans les délais, respectant le cahier des charges.</p></div>
+          <article class="stackcard" style="--i:1; --f:var(--c-b)" data-stack-card data-reveal>
+            <div class="stackcard__card" data-stack-inner>
+              <header class="stackcard__head">
+                <span class="stackcard__idx mono">02</span>
+                <div class="stackcard__id">
+                  <h3 class="stackcard__title">Site web — activité de divertissement</h3>
+                  <p class="stackcard__sub mono">Déc. 2024 · projet BUT · binôme</p>
                 </div>
-                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
-              </div>
+                <ul class="stackcard__tags">
+                  <li class="tag" style="--f:var(--c-y)">HTML</li>
+                  <li class="tag" style="--f:var(--c-b)">CSS</li>
+                  <li class="tag" style="--f:var(--c-g)">Git</li>
+                </ul>
+              </header>
+              <ol class="seq">
+                <li class="seq__step" style="--f:var(--c-b)"><span class="seq__ghost" aria-hidden="true">S</span><span class="seq__label mono">Situation</span><p>Projet BUT en binôme : créer un site web sur une activité de divertissement (choix libre), 3 pages au total.</p></li>
+                <li class="seq__step" style="--f:var(--c-y)"><span class="seq__ghost" aria-hidden="true">T</span><span class="seq__label mono">Tâche</span><p>Concevoir la structure, le design et l'intégration du contenu en respectant les bonnes pratiques web.</p></li>
+                <li class="seq__step" style="--f:var(--c-o)"><span class="seq__ghost" aria-hidden="true">A</span><span class="seq__label mono">Action</span><p>Développé en HTML et CSS, répartition des tâches en binôme avec versioning Git.</p></li>
+                <li class="seq__step" style="--f:var(--c-g)"><span class="seq__ghost" aria-hidden="true">R</span><span class="seq__label mono">Résultat</span><p>Site fonctionnel livré dans les délais, respectant le cahier des charges.</p></li>
+              </ol>
+              <a class="stackcard__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
             </div>
-          </li>
+          </article>
 
-          <li class="project" data-reveal>
-            <button class="project__head" aria-expanded="false" aria-controls="p3">
-              <span class="project__idx mono">03</span>
-              <span class="project__title">Jeu vidéo en C++</span>
-              <span class="project__meta">
-                <span class="project__date mono">Oct. 2024</span>
-                <span class="project__tags">
-                  <span class="tag" style="--f:var(--c-g)">C++</span>
-                  <span class="tag" style="--f:var(--c-r)">Game dev</span>
-                </span>
-              </span>
-              <span class="project__toggle" aria-hidden="true"></span>
-            </button>
-            <div class="project__panel" id="p3" role="region">
-              <div class="project__panel-inner">
-                <div class="star">
-                  <div class="star__cell" style="--f:var(--c-b)"><span class="star__k mono">S — Situation</span><p>Projet BUT : développer un jeu vidéo en C++ avec contraintes de déplacement dans une zone définie.</p></div>
-                  <div class="star__cell" style="--f:var(--c-y)"><span class="star__k mono">T — Tâche</span><p>Implémenter la boucle de jeu, les déplacements du personnage et la gestion des collisions avec les limites.</p></div>
-                  <div class="star__cell" style="--f:var(--c-o)"><span class="star__k mono">A — Action</span><p>Codé en C++ — boucle de jeu, détection de collision et logique de contrainte de zone.</p></div>
-                  <div class="star__cell" style="--f:var(--c-g)"><span class="star__k mono">R — Résultat</span><p>Personnage confiné à la zone définie, jeu jouable et fonctionnel.</p></div>
+          <article class="stackcard" style="--i:2; --f:var(--c-g)" data-stack-card data-reveal>
+            <div class="stackcard__card" data-stack-inner>
+              <header class="stackcard__head">
+                <span class="stackcard__idx mono">03</span>
+                <div class="stackcard__id">
+                  <h3 class="stackcard__title">Jeu vidéo en C++</h3>
+                  <p class="stackcard__sub mono">Oct. 2024 · projet BUT</p>
                 </div>
-                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
-              </div>
+                <ul class="stackcard__tags">
+                  <li class="tag" style="--f:var(--c-g)">C++</li>
+                  <li class="tag" style="--f:var(--c-r)">Game dev</li>
+                </ul>
+              </header>
+              <ol class="seq">
+                <li class="seq__step" style="--f:var(--c-b)"><span class="seq__ghost" aria-hidden="true">S</span><span class="seq__label mono">Situation</span><p>Projet BUT : développer un jeu vidéo en C++ avec contraintes de déplacement dans une zone définie.</p></li>
+                <li class="seq__step" style="--f:var(--c-y)"><span class="seq__ghost" aria-hidden="true">T</span><span class="seq__label mono">Tâche</span><p>Implémenter la boucle de jeu, les déplacements du personnage et la gestion des collisions avec les limites.</p></li>
+                <li class="seq__step" style="--f:var(--c-o)"><span class="seq__ghost" aria-hidden="true">A</span><span class="seq__label mono">Action</span><p>Codé en C++ — boucle de jeu, détection de collision et logique de contrainte de zone.</p></li>
+                <li class="seq__step" style="--f:var(--c-g)"><span class="seq__ghost" aria-hidden="true">R</span><span class="seq__label mono">Résultat</span><p>Personnage confiné à la zone définie, jeu jouable et fonctionnel.</p></li>
+              </ol>
+              <a class="stackcard__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
             </div>
-          </li>
+          </article>
 
-          <li class="project" data-reveal>
-            <button class="project__head" aria-expanded="false" aria-controls="p4">
-              <span class="project__idx mono">04</span>
-              <span class="project__title">Jeu à roulette en Python</span>
-              <span class="project__meta">
-                <span class="project__date mono">Juil. 2023</span>
-                <span class="project__tags">
-                  <span class="tag" style="--f:var(--c-r)">Python</span>
-                </span>
-              </span>
-              <span class="project__toggle" aria-hidden="true"></span>
-            </button>
-            <div class="project__panel" id="p4" role="region">
-              <div class="project__panel-inner">
-                <div class="star">
-                  <div class="star__cell" style="--f:var(--c-b)"><span class="star__k mono">S — Situation</span><p>Exercice tiré d'un livre d'apprentissage Python : implémenter une version simplifiée d'un jeu de roulette.</p></div>
-                  <div class="star__cell" style="--f:var(--c-y)"><span class="star__k mono">T — Tâche</span><p>Comprendre les bases : variables, boucles, conditions, génération de nombres aléatoires.</p></div>
-                  <div class="star__cell" style="--f:var(--c-o)"><span class="star__k mono">A — Action</span><p>Jeu en console codé en Python — logique de mise, tirage aléatoire, affichage du résultat.</p></div>
-                  <div class="star__cell" style="--f:var(--c-g)"><span class="star__k mono">R — Résultat</span><p>Premier projet fonctionnel — point de départ de ma passion pour le développement.</p></div>
+          <article class="stackcard" style="--i:3; --f:var(--c-r)" data-stack-card data-reveal>
+            <div class="stackcard__card" data-stack-inner>
+              <header class="stackcard__head">
+                <span class="stackcard__idx mono">04</span>
+                <div class="stackcard__id">
+                  <h3 class="stackcard__title">Jeu à roulette en Python</h3>
+                  <p class="stackcard__sub mono">Juil. 2023 · premier projet</p>
                 </div>
-                <a class="project__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
-              </div>
+                <ul class="stackcard__tags">
+                  <li class="tag" style="--f:var(--c-r)">Python</li>
+                </ul>
+              </header>
+              <ol class="seq">
+                <li class="seq__step" style="--f:var(--c-b)"><span class="seq__ghost" aria-hidden="true">S</span><span class="seq__label mono">Situation</span><p>Exercice tiré d'un livre d'apprentissage Python : implémenter une version simplifiée d'un jeu de roulette.</p></li>
+                <li class="seq__step" style="--f:var(--c-y)"><span class="seq__ghost" aria-hidden="true">T</span><span class="seq__label mono">Tâche</span><p>Comprendre les bases : variables, boucles, conditions, génération de nombres aléatoires.</p></li>
+                <li class="seq__step" style="--f:var(--c-o)"><span class="seq__ghost" aria-hidden="true">A</span><span class="seq__label mono">Action</span><p>Jeu en console codé en Python — logique de mise, tirage aléatoire, affichage du résultat.</p></li>
+                <li class="seq__step" style="--f:var(--c-g)"><span class="seq__ghost" aria-hidden="true">R</span><span class="seq__label mono">Résultat</span><p>Premier projet fonctionnel — point de départ de ma passion pour le développement.</p></li>
+              </ol>
+              <a class="stackcard__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
             </div>
-          </li>
-        </ul>
+          </article>
+        </div>
       </div>
     </section>
 
