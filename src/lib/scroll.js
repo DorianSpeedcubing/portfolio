@@ -132,22 +132,64 @@ export function parallax() {
 }
 
 /**
- * "Solve Run" timeline: the spectrum spine fills top→bottom as the parcours
- * section scrolls through the viewport, like a running solve timer. The fill
- * defaults to full in CSS, so reduced-motion/still mode shows a completed run.
+ * "Solve Run" timeline: a curved spectrum path threads through the alternating
+ * milestone nodes and draws itself (stroke-dashoffset) as the section scrolls,
+ * like a running solve timer. The path geometry is rebuilt from the live node
+ * positions, so it follows whatever layout/heights the content produces.
+ * Node positions are read via the offset chain (not getBoundingClientRect) so
+ * the reveal transforms on [data-reveal] don't skew the measurement.
  */
-export function runFill() {
-  if (reduced) return;
-  gsap.utils.toArray('[data-run]').forEach((run) => {
-    const fill = run.querySelector('[data-run-fill]');
-    if (!fill) return;
-    gsap.fromTo(fill,
-      { scaleY: 0 },
-      {
-        scaleY: 1, ease: 'none', transformOrigin: 'top',
-        scrollTrigger: { trigger: run, start: 'top 72%', end: 'bottom 78%', scrub: 0.6 },
-      });
-  });
+export function runPath() {
+  const run = document.querySelector('[data-run]');
+  if (!run) return;
+  const svg = run.querySelector('[data-run-svg]');
+  const base = run.querySelector('[data-run-base]');
+  const fill = run.querySelector('[data-run-fill]');
+  const nodes = gsap.utils.toArray('.run__node', run);
+  if (!svg || !base || !fill || nodes.length < 2) return;
+
+  const still = document.documentElement.classList.contains('still');
+  const animate = !reduced && !still;
+
+  const center = (el) => {
+    let x = 0, y = 0, n = el;
+    while (n && n !== run) { x += n.offsetLeft; y += n.offsetTop; n = n.offsetParent; }
+    return { x: x + el.offsetWidth / 2, y: y + el.offsetHeight / 2 };
+  };
+  // Smooth Catmull-Rom curve through the points, emitted as cubic béziers.
+  const curve = (p) => {
+    let d = `M ${p[0].x} ${p[0].y}`;
+    for (let i = 0; i < p.length - 1; i += 1) {
+      const p0 = p[i - 1] || p[i], p1 = p[i], p2 = p[i + 1], p3 = p[i + 2] || p2;
+      const c1x = p1.x + (p2.x - p0.x) / 6, c1y = p1.y + (p2.y - p0.y) / 6;
+      const c2x = p2.x - (p3.x - p1.x) / 6, c2y = p2.y - (p3.y - p1.y) / 6;
+      d += ` C ${c1x} ${c1y} ${c2x} ${c2y} ${p2.x} ${p2.y}`;
+    }
+    return d;
+  };
+
+  let st;
+  const build = () => {
+    const w = run.offsetWidth, h = run.offsetHeight;
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    const d = curve(nodes.map(center));
+    base.setAttribute('d', d);
+    fill.setAttribute('d', d);
+    const len = fill.getTotalLength();
+    fill.style.strokeDasharray = `${len}`;
+    if (st) { st.kill(); st = null; }
+    if (!animate) { fill.style.strokeDashoffset = '0'; return; }
+    fill.style.strokeDashoffset = `${len}`;
+    st = ScrollTrigger.create({
+      trigger: run, start: 'top 74%', end: 'bottom 82%', scrub: 0.5,
+      onUpdate: (self) => { fill.style.strokeDashoffset = `${len * (1 - self.progress)}`; },
+    });
+  };
+
+  build();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+  let t;
+  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(build, 160); }, { passive: true });
 }
 
 /**

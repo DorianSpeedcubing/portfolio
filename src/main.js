@@ -2,12 +2,11 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './styles/sections.css';
 
-import { initScroll, reveal, revealLines, revealMedia, counters, heroIntro, parallax, runFill, stackCards, initNav } from './lib/scroll.js';
+import { initScroll, reveal, revealLines, revealMedia, counters, heroIntro, parallax, runPath, stackCards, initNav } from './lib/scroll.js';
 import { initSpeedcube } from './lib/speedcube.js';
 import { initScramble } from './lib/scramble.js';
 import { initTimer } from './lib/timer.js';
 import { initLightbox } from './lib/lightbox.js';
-import { initMagnetic } from './lib/magnetic.js';
 import { initVelocity } from './lib/velocity.js';
 import { initLoader } from './lib/loader.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -44,10 +43,10 @@ function boot() {
     revealMedia();
     counters();
     parallax();
-    runFill();
     stackCards();
     initScramble();
   }
+  runPath();   // self-gates: draws the curve in still/reduced mode, animates otherwise
   initNav(lenis);
   initVelocity();
 
@@ -55,7 +54,6 @@ function boot() {
   initSpeedcube();
   initTimer();
   initLightbox();
-  initMagnetic();
 
   // Recompute trigger positions once webfonts/images settle.
   window.addEventListener('load', () => ScrollTrigger.refresh());

@@ -69,6 +69,7 @@
     <defs>
       <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2c.4 5.3 4.3 9.6 10 10-5.7.4-9.6 4.3-10 10-.4-5.7-4.3-9.6-10-10 5.7-.4 9.6-4.3 10-10Z"/></symbol>
       <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 4v16M6 14l6 6 6-6"/></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V4M6 10l6-6 6 6"/></symbol>
       <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
       <symbol id="i-arrow-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
       <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 11l5 5 5-5M5 20h14"/></symbol>
@@ -157,10 +158,10 @@
             <span class="accent">vrais projets</span> et continuer à progresser.
           </p>
           <div class="hero__cta" data-reveal>
-            <a class="btn btn--solid" href="#contact" data-magnetic>Me contacter
+            <a class="btn btn--solid" href="#contact">Me contacter
               <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download data-magnetic>
+            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download>
               <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Télécharger le CV
             </a>
           </div>
@@ -266,47 +267,59 @@
         </p>
 
         <ol class="run" data-run>
-          <span class="run__spine" aria-hidden="true"><i class="run__fill" data-run-fill></i></span>
+          <svg class="run__svg" data-run-svg aria-hidden="true" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="runGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0"    style="stop-color:var(--c-r)"/>
+                <stop offset="0.26" style="stop-color:var(--c-o)"/>
+                <stop offset="0.46" style="stop-color:var(--c-y)"/>
+                <stop offset="0.66" style="stop-color:var(--c-g)"/>
+                <stop offset="1"    style="stop-color:var(--c-b)"/>
+              </linearGradient>
+            </defs>
+            <path class="run__path-base" data-run-base fill="none"></path>
+            <path class="run__path-fill" data-run-fill fill="none" stroke="url(#runGrad)"></path>
+          </svg>
 
           <li class="run__split run__split--live" style="--node:var(--c-g)" data-reveal>
-            <span class="run__time mono"><b>2026</b><i>en cours</i></span>
             <span class="run__node" aria-hidden="true"></span>
             <div class="run__card">
               <span class="run__type mono" data-kind="exp">Expérience</span>
               <h3 class="run__title">Stagiaire — USTS</h3>
+              <p class="run__when mono">2026 · en cours</p>
               <p class="run__place">Automatisation · workflows n8n</p>
               <p class="run__desc">Conception de workflows d'automatisation <strong>n8n</strong> pour la génération et le traitement d'images et de vidéos.</p>
             </div>
           </li>
 
-          <li class="run__split run__split--ongoing" style="--node:var(--c-g)" data-reveal>
-            <span class="run__time mono"><b>2024</b><i>en cours</i></span>
-            <span class="run__node" aria-hidden="true"></span>
-            <div class="run__card">
-              <span class="run__type mono" data-kind="form">Formation</span>
-              <h3 class="run__title">BUT Informatique</h3>
-              <p class="run__place">IUT d'Orsay · Université Paris-Saclay</p>
-              <p class="run__desc">Développement web &amp; logiciel, algorithmique, bases de données, réseaux, systèmes, gestion de projet agile.</p>
-            </div>
-          </li>
-
           <li class="run__split" style="--node:var(--c-o)" data-reveal>
-            <span class="run__time mono"><b>2025</b><i>été</i></span>
             <span class="run__node" aria-hidden="true"></span>
             <div class="run__card">
               <span class="run__type mono" data-kind="exp">Expérience <span class="run__bonus">bonus</span></span>
               <h3 class="run__title">Stage agricole</h3>
+              <p class="run__when mono">Été 2025</p>
               <p class="run__place">Granada, Espagne</p>
               <p class="run__desc">Entretien des cultures, construction (maçonnerie, transport de matériaux). Management participatif et prise de décision.</p>
             </div>
           </li>
 
+          <li class="run__split run__split--ongoing" style="--node:var(--c-g)" data-reveal>
+            <span class="run__node" aria-hidden="true"></span>
+            <div class="run__card">
+              <span class="run__type mono" data-kind="form">Formation</span>
+              <h3 class="run__title">BUT Informatique</h3>
+              <p class="run__when mono">2024 · en cours</p>
+              <p class="run__place">IUT d'Orsay · Université Paris-Saclay</p>
+              <p class="run__desc">Développement web &amp; logiciel, algorithmique, bases de données, réseaux, systèmes, gestion de projet agile.</p>
+            </div>
+          </li>
+
           <li class="run__split" style="--node:var(--c-b)" data-reveal>
-            <span class="run__time mono"><b>2024</b></span>
             <span class="run__node" aria-hidden="true"></span>
             <div class="run__card">
               <span class="run__type mono" data-kind="form">Formation</span>
               <h3 class="run__title">Baccalauréat Général</h3>
+              <p class="run__when mono">2024</p>
               <p class="run__place">Lycée Peter Pan · Antananarivo, Madagascar</p>
               <p class="run__desc">Spécialités Mathématiques &amp; NSI (Numérique et Sciences Informatiques). <span class="run__badge">Mention Bien</span></p>
             </div>
@@ -418,7 +431,6 @@
                 <li class="seq__step" style="--f:var(--c-o)"><span class="seq__ghost" aria-hidden="true">A</span><span class="seq__label mono">Action</span><p>Java &amp; SQL pour la logique métier, HTML/CSS pour l'interface. Collaboration et versioning via GitLab.</p></li>
                 <li class="seq__step" style="--f:var(--c-g)"><span class="seq__ghost" aria-hidden="true">R</span><span class="seq__label mono">Résultat</span><p>Application fonctionnelle livrée en trinôme. Maîtrise du travail collaboratif et de l'intégration multi-langages.</p></li>
               </ol>
-              <a class="stackcard__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
             </div>
           </article>
 
@@ -442,7 +454,6 @@
                 <li class="seq__step" style="--f:var(--c-o)"><span class="seq__ghost" aria-hidden="true">A</span><span class="seq__label mono">Action</span><p>Développé en HTML et CSS, répartition des tâches en binôme avec versioning Git.</p></li>
                 <li class="seq__step" style="--f:var(--c-g)"><span class="seq__ghost" aria-hidden="true">R</span><span class="seq__label mono">Résultat</span><p>Site fonctionnel livré dans les délais, respectant le cahier des charges.</p></li>
               </ol>
-              <a class="stackcard__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
             </div>
           </article>
 
@@ -465,7 +476,6 @@
                 <li class="seq__step" style="--f:var(--c-o)"><span class="seq__ghost" aria-hidden="true">A</span><span class="seq__label mono">Action</span><p>Codé en C++ — boucle de jeu, détection de collision et logique de contrainte de zone.</p></li>
                 <li class="seq__step" style="--f:var(--c-g)"><span class="seq__ghost" aria-hidden="true">R</span><span class="seq__label mono">Résultat</span><p>Personnage confiné à la zone définie, jeu jouable et fonctionnel.</p></li>
               </ol>
-              <a class="stackcard__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
             </div>
           </article>
 
@@ -487,7 +497,6 @@
                 <li class="seq__step" style="--f:var(--c-o)"><span class="seq__ghost" aria-hidden="true">A</span><span class="seq__label mono">Action</span><p>Jeu en console codé en Python — logique de mise, tirage aléatoire, affichage du résultat.</p></li>
                 <li class="seq__step" style="--f:var(--c-g)"><span class="seq__ghost" aria-hidden="true">R</span><span class="seq__label mono">Résultat</span><p>Premier projet fonctionnel — point de départ de ma passion pour le développement.</p></li>
               </ol>
-              <a class="stackcard__link mono" href="#" rel="noopener">Voir le code · GitHub <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
             </div>
           </article>
         </div>
@@ -496,14 +505,13 @@
 
     <!-- ============================== SPEEDCUBE ============================== -->
     <section class="section speedcube" id="speedcube">
-      <div class="speedcube__aura" aria-hidden="true"></div>
       <div class="container">
         <header class="speedcube__head">
           <div data-reveal>
             <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg> speedcube</p>
             <h2 class="section-title display" data-reveal-lines>Sept ans à chercher <span class="serif">la vitesse.</span></h2>
           </div>
-          <a class="btn btn--ghost speedcube__wca" href="https://www.worldcubeassociation.org/persons/2019GERA06" target="_blank" rel="noopener" data-magnetic>Profil WCA · 2019GERA06
+          <a class="btn btn--ghost speedcube__wca" href="https://www.worldcubeassociation.org/persons/2019GERA06" target="_blank" rel="noopener">Profil WCA · 2019GERA06
             <svg class="icon" aria-hidden="true"><use href="#i-arrow-ur"/></svg>
           </a>
         </header>
@@ -664,10 +672,10 @@
             <li><span class="contact__k mono"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</span><a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">dorian-bellet-mac <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a></li>
           </ul>
           <div class="contact__cta" data-reveal>
-            <a class="btn btn--solid" href="mailto:dorian.belletmac@gmail.com" data-magnetic>Envoyer un email
+            <a class="btn btn--solid" href="mailto:dorian.belletmac@gmail.com">Envoyer un email
               <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download data-magnetic>
+            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download>
               <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Télécharger le CV
             </a>
           </div>
@@ -679,12 +687,26 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <a class="footer__mark" href="#top">
-        <span class="header__mark-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-        Dorian Bellet
+      <div class="footer__top">
+        <p class="footer__avail mono"><span class="footer__dot" aria-hidden="true"></span> Disponible · alternance &amp; stages 2026</p>
+        <a class="footer__totop mono" href="#top">Haut de page <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
+      </div>
+
+      <a class="footer__word" href="#top" aria-label="Dorian Bellet — retour en haut">
+        <span class="footer__word-a">Dorian</span><span class="footer__word-b">Bellet</span>
       </a>
-      <p class="footer__meta mono">BUT Informatique · IUT Orsay · 2026</p>
-      <a class="footer__link mono" href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">LinkedIn <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+
+      <div class="footer__base">
+        <div class="footer__id">
+          <span class="header__mark-grid footer__grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <p class="footer__meta mono">© 2026 — conçu &amp; codé par Dorian Bellet · IUT d'Orsay</p>
+        </div>
+        <nav class="footer__nav mono" aria-label="Liens">
+          <a href="mailto:dorian.belletmac@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="./cv/dorian-bellet-cv.pdf" download>CV</a>
+        </nav>
+      </div>
     </div>
   </footer>
 </body>
