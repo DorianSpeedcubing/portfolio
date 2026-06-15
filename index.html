@@ -656,31 +656,47 @@
 
     <!-- ============================== 06 CONTACT ============================== -->
     <section class="section contact" id="contact">
-      <div class="container contact__grid">
-        <div class="contact__intro">
-          <header class="section-head" data-reveal>
-            <p class="eyebrow">06 · contact</p>
-            <h2 class="section-title display contact__title" data-reveal-lines>Entrons <span class="serif">en contact.</span></h2>
-          </header>
-          <p class="contact__avail" data-reveal>
-            Une question, une idée de projet, ou juste envie d'échanger&nbsp;?
-            <span class="accent">Écrivez-moi.</span>
-          </p>
-          <ul class="contact__list" data-reveal>
-            <li><span class="contact__k mono"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg> Email</span><a href="mailto:dorian.belletmac@gmail.com">dorian.belletmac@gmail.com</a></li>
-            <li><span class="contact__k mono"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Téléphone</span><a href="tel:+33780286002">07&nbsp;80&nbsp;28&nbsp;60&nbsp;02</a></li>
-            <li><span class="contact__k mono"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</span><a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">dorian-bellet-mac <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a></li>
-          </ul>
-          <div class="contact__cta" data-reveal>
-            <a class="btn btn--solid" href="mailto:dorian.belletmac@gmail.com">Envoyer un email
-              <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+      <div class="container">
+        <header class="section-head contact__head" data-reveal>
+          <p class="eyebrow">06 · contact</p>
+          <h2 class="section-title display contact__title" data-reveal-lines>Entrons <span class="serif">en contact.</span></h2>
+        </header>
+
+        <p class="contact__lede" data-reveal>
+          Un projet, une question, ou simplement l'envie d'échanger&nbsp;?
+          La porte est ouverte — <span class="accent">écrivez quand vous voulez.</span>
+        </p>
+
+        <!-- Signature: the address itself is the call to action -->
+        <div class="mailto" data-reveal>
+          <p class="mailto__label mono">écrivez-moi à</p>
+          <div class="mailto__row">
+            <a class="mailto__addr mono" href="mailto:dorian.belletmac@gmail.com">
+              <span class="mailto__addr-txt">dorian.belletmac@<wbr>gmail.com</span>
+              <svg class="icon mailto__arrow" aria-hidden="true"><use href="#i-arrow-right"/></svg>
             </a>
-            <a class="btn btn--ghost" href="./cv/dorian-bellet-cv.pdf" download>
-              <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> Télécharger le CV
-            </a>
+            <button class="mailto__copy mono" type="button" data-copy="dorian.belletmac@gmail.com" aria-label="Copier l'adresse email">
+              <span class="mailto__copy-label">copier</span>
+              <svg class="icon icon--xs mailto__copy-check" aria-hidden="true"><use href="#i-check"/></svg>
+            </button>
           </div>
         </div>
 
+        <!-- Quiet utility row: the other channels -->
+        <ul class="channels mono" data-reveal>
+          <li class="channels__item">
+            <span class="channels__k"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> Téléphone</span>
+            <a href="tel:+33780286002">07&nbsp;80&nbsp;28&nbsp;60&nbsp;02</a>
+          </li>
+          <li class="channels__item">
+            <span class="channels__k"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg> LinkedIn</span>
+            <a href="https://www.linkedin.com/in/dorian-bellet-mac/" target="_blank" rel="noopener">dorian-bellet-mac <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-ur"/></svg></a>
+          </li>
+          <li class="channels__item">
+            <span class="channels__k"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg> CV</span>
+            <a href="./cv/dorian-bellet-cv.pdf" download>dorian-bellet-cv.pdf <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
+          </li>
+        </ul>
       </div>
     </section>
   </main>

@@ -9,6 +9,7 @@ import { initTimer } from './lib/timer.js';
 import { initLightbox } from './lib/lightbox.js';
 import { initVelocity } from './lib/velocity.js';
 import { initLoader } from './lib/loader.js';
+import { initContact } from './lib/contact.js';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // `?still` = screenshot/QA mode: render every section in its final, visible
@@ -54,6 +55,7 @@ function boot() {
   initSpeedcube();
   initTimer();
   initLightbox();
+  initContact();
 
   // Recompute trigger positions once webfonts/images settle.
   window.addEventListener('load', () => ScrollTrigger.refresh());

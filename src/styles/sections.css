@@ -567,19 +567,74 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
 .interest__text { margin-top: 0.5rem; color: var(--text-soft); font-size: var(--fs-sm); }
 .interest__more { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: var(--fs-xs); color: var(--f); }
 
-/* ---------- 06 Contact ---------- */
+/* ---------- 06 Contact — the address itself is the call to action ---------- */
 .contact { position: relative; overflow: hidden; }
-.contact__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; max-width: 56rem; }
-.contact__title { font-size: var(--fs-mega); }
-.contact__avail { margin: 1.5rem 0; font-size: var(--fs-lede); color: var(--text-soft); max-width: 40ch; }
-.contact__list { list-style: none; margin: 0 0 1.8rem; padding: 0; }
-.contact__list li { display: grid; grid-template-columns: 11rem 1fr; gap: 1rem; align-items: center; padding: 0.9rem 0; border-top: 1px solid var(--line-soft); }
-.contact__list li:last-child { border-bottom: 1px solid var(--line-soft); }
-.contact__k { display: inline-flex; align-items: center; gap: 0.5em; font-size: var(--fs-xs); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mute); }
-.contact__k .icon { color: var(--accent); width: 1.1em; height: 1.1em; }
-.contact__list a { transition: color var(--dur-fast); }
-.contact__list a:hover { color: var(--accent); }
-.contact__cta { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+.contact__head { margin-bottom: clamp(1.4rem, 3vw, 2.2rem); }
+/* Moderate — the email is the section's hero, not this title (nor the footer wordmark below) */
+.contact__title { font-size: var(--fs-h1); }
+.contact__lede {
+  max-width: 48ch; margin: 0 0 clamp(2.6rem, 6vw, 4.5rem);
+  font-size: var(--fs-lede); color: var(--text-soft);
+}
+
+/* Signature email block — spans the full width, replacing the old dead right-half */
+.mailto { position: relative; padding-top: clamp(1.4rem, 3vw, 2.2rem); border-top: 1px solid var(--line); }
+.mailto__label {
+  margin: 0 0 0.9rem; font-size: var(--fs-xs); letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--text-mute);
+}
+.mailto__row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem 1.5rem; }
+
+.mailto__addr {
+  display: inline-flex; align-items: center; gap: 0.32em;
+  font-size: clamp(1.35rem, 0.4rem + 4.4vw, 4rem); line-height: 1.05;
+  letter-spacing: -0.02em; overflow-wrap: break-word;
+  /* spectrum sweep: white at rest, gradient wipes across on hover (the wordmark motif) */
+  background-image: var(--grad-spectrum); background-size: 220% 100%;
+  background-position: 100% 0; background-repeat: no-repeat;
+  -webkit-background-clip: text; background-clip: text;
+  color: var(--text); -webkit-text-fill-color: var(--text);
+  transition: -webkit-text-fill-color var(--dur) var(--ease-out),
+              background-position var(--dur-slow) var(--ease-out);
+}
+.mailto__addr .mailto__arrow {
+  width: 0.62em; height: 0.62em; color: var(--accent);
+  -webkit-text-fill-color: currentColor;
+  transition: transform var(--dur) var(--ease-out);
+}
+@media (hover: hover) {
+  .mailto__addr:hover { -webkit-text-fill-color: transparent; background-position: 0 0; }
+}
+.mailto__addr:hover .mailto__arrow { transform: translate(0.22em, -0.22em); }
+
+.mailto__copy {
+  display: inline-flex; align-items: center; gap: 0.5em; flex: none;
+  padding: 0.6em 1.1em; border-radius: 100px;
+  border: 1px solid var(--line-strong); background: transparent; cursor: pointer;
+  font-family: var(--font-mono); font-size: var(--fs-xs);
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-soft);
+  transition: border-color var(--dur-fast), color var(--dur-fast), background var(--dur-fast);
+}
+.mailto__copy:hover { border-color: var(--text); color: var(--text); background: rgba(244,242,236,0.04); }
+.mailto__copy-check { display: none; color: var(--c-g); }
+.mailto__copy.is-copied { color: var(--c-g); border-color: color-mix(in oklab, var(--c-g) 50%, transparent); }
+.mailto__copy.is-copied .mailto__copy-check { display: inline-block; }
+
+/* Quiet utility row: phone · LinkedIn · CV */
+.channels {
+  list-style: none; margin: clamp(2.6rem, 5vw, 3.6rem) 0 0; padding: 1.5rem 0 0;
+  border-top: 1px solid var(--line-soft);
+  display: flex; flex-wrap: wrap; gap: 1rem 2.6rem;
+}
+.channels__item { display: inline-flex; align-items: baseline; gap: 0.7rem; font-size: var(--fs-sm); }
+.channels__k {
+  display: inline-flex; align-items: center; gap: 0.45em;
+  font-size: var(--fs-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mute);
+}
+.channels__k .icon { width: 1.05em; height: 1.05em; color: var(--accent); transform: translateY(0.12em); }
+.channels a { color: var(--text); transition: color var(--dur-fast); }
+.channels a:hover { color: var(--accent); }
+.channels a .icon--xs { color: var(--text-mute); }
 
 /* ---------- Footer — the "finish": oversized sign-off wordmark ---------- */
 .footer { border-top: 1px solid var(--line); padding-block: clamp(3rem, 6vw, 5rem) 2.4rem; overflow: hidden; }
@@ -653,7 +708,6 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
    ============================================================ */
 @media (max-width: 1080px) {
   .sc-lower { grid-template-columns: 1fr; }
-  .contact__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
   .menu-toggle { display: block; }
@@ -724,7 +778,9 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
   .sc-stat { border-right: 0; border-bottom: 1px solid var(--line); }
   .sc-stat:last-child { border-bottom: 0; }
   .stackcard__idx { font-size: 2rem; }
-  .coords__row, .contact__list li { grid-template-columns: 1fr; gap: 0.2rem; }
+  .coords__row { grid-template-columns: 1fr; gap: 0.2rem; }
+  .channels { flex-direction: column; gap: 1rem; }
+  .channels__item { width: 100%; }
   .hero__title { font-size: clamp(2.4rem, 11vw, 3.6rem); }
   .hero__eyebrow { flex-wrap: wrap; font-size: var(--fs-2xs); letter-spacing: 0.08em; max-width: 66%; }
   .hero__lede { font-size: 0.95rem; }
@@ -732,7 +788,6 @@ html.menu-open .menu-toggle span:nth-child(2){ transform: translateY(-3px) rotat
   .hero__snap { width: clamp(80px, 23vw, 104px); right: 1.5rem; }
   /* Stack the hero buttons so the long "Télécharger le CV" never overflows */
   .hero__cta { flex-direction: column; align-items: stretch; }
-  .hero__cta .btn, .contact__cta .btn { justify-content: center; }
-  .contact__cta { flex-direction: column; align-items: stretch; }
+  .hero__cta .btn { justify-content: center; }
   .divider__quote { font-size: clamp(2rem, 9vw, 3rem); }
 }
