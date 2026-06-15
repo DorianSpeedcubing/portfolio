@@ -25,7 +25,9 @@ const jobs = [
 for (const job of jobs) {
   const src = resolve(srcDir, job.src);
   if (!existsSync(src)) { console.warn('skip (missing):', job.src); continue; }
-  const { data, info } = await sharp(src).ensureAlpha().raw()
+  const { data, info } = await sharp(src)
+    .resize({ width: 1400, height: 1400, fit: 'inside', withoutEnlargement: true })
+    .ensureAlpha().raw()
     .toBuffer({ resolveWithObject: true });
   const { width, height, channels } = info;
   const buf = Buffer.alloc(width * height * 4);
