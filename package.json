@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "optimize:media": "node scripts/optimize-media.mjs"
+    "optimize:media": "node scripts/optimize-media.mjs",
+    "ink:process": "node scripts/ink-to-white.mjs"
   },
   "dependencies": {
     "gsap": "^3.12.5",

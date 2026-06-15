@@ -7,3 +7,9 @@ dist
 docs/
 scripts/
 media-src/
+
+# brainstorming visual companion
+.superpowers/
+
+# ink backdrop: unlicensed source art (placeholders, processed into public/media/ink)
+ink-src/
